@@ -31,7 +31,8 @@ warnings.filterwarnings("ignore")
 logging.getLogger("yfinance").setLevel(logging.ERROR)
 logging.getLogger("urllib3").setLevel(logging.ERROR)
 # ── Alpha Vantage API configuration ─────────────────────────────────────────────────────────────
-ALPHA_VANTAGE_API_KEY = "NHEZYAS5ARQ0WVXM"
+# Get Alpha Vantage API key from secrets
+ALPHA_VANTAGE_API_KEY = st.secrets.get("ALPHA_VANTAGE_API_KEY", os.environ.get("ALPHA_VANTAGE_API_KEY", ""))
 # ── API Key handling ─────────────────────────────────────────────────────────
 # Priority: 1) st.secrets  2) env var  3) sidebar input  4) session state
 _api_key = ""

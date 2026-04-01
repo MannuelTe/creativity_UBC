@@ -1,6 +1,8 @@
 import requests
+import os
 
-API_KEY = "4EXCS4PU8RSZGUBR"
+# Use environment variable or replace with your key
+API_KEY = os.environ.get("ALPHA_VANTAGE_API_KEY", "your-api-key-here")
 BASE_URL = "https://www.alphavantage.co/query"
 
 def test_alphavantage_api():
