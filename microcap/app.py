@@ -36,8 +36,8 @@ st.set_page_config(page_title="Creativity Project", layout="wide")
 st.title("🔬 Microcap Stock Screener & AI Analyst")
 
 # DEBUG: This should appear if the correct file is loaded
-st.sidebar.markdown("**🔧 DEBUG: FIXED VERSION LOADED ✅**")
-st.sidebar.markdown(f"*File: {__file__}*")
+#st.sidebar.markdown("**🔧 DEBUG: FIXED VERSION LOADED ✅**")
+#st.sidebar.markdown(f"*File: {__file__}*")
 
 # ── Configure logging and warnings ──────────────────────────────────────────
 # Suppress yfinance and urllib warnings that show 404 errors to users
