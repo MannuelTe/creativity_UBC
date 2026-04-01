@@ -221,18 +221,24 @@ if not raw_tickers:
     st.error("No tickers available. Please select data sources or check ticker configuration.")
     st.stop()
 
-# Smart sampling with implicit selection
-auto_select = st.sidebar.checkbox(
-    "🎯 Auto-select & Filter (Recommended)", 
-    value=True, 
-    help="Automatically select 10 random tickers and filter by market cap"
+# Mode selection - Auto Mode is now default as requested
+selection_mode = st.sidebar.radio(
+    "🎯 Selection Mode",
+    options=["Auto Mode", "Random Mode"],
+    index=0,  # Default to Auto Mode (index 0)
+    help="Auto Mode: Smart filtering and selection (recommended) | Random Mode: 10 completely random tickers"
 )
 
-if auto_select:
-    # Always select 10 random tickers for auto mode
+if selection_mode == "Auto Mode":
+    # Auto mode - smart selection with filtering capability
     max_tickers = 10
-    st.sidebar.info("Auto mode: Selecting 10 random tickers")
+    st.sidebar.info("🎯 Auto mode: Smart selection with filtering")
+elif selection_mode == "Random Mode":
+    # Random mode - always exactly 10 random tickers
+    max_tickers = 10
+    st.sidebar.info("🎲 Random mode: 10 completely random tickers")
 else:
+    # Fallback for manual selection (keeping for compatibility)
     max_tickers = st.sidebar.number_input(
         "Max tickers to process",
         min_value=1,
@@ -241,22 +247,29 @@ else:
         help="Higher numbers take longer but give better coverage"
     )
 
-# Enhanced ticker selection with vetting
+# Enhanced ticker selection with different modes
 if len(raw_tickers) > max_tickers:
     if use_validated:
         # For validated lists, take top ones (they're already quality-filtered)
         selected_tickers = raw_tickers[:max_tickers]
         st.info(f"🎯 Processing top {len(selected_tickers)} validated small caps")
     else:
-        # Enhanced random sampling with better distribution
+        # Different sampling strategies based on mode
         import random
-        random.seed(42)  # For reproducible results during session
-        selected_tickers = random.sample(raw_tickers, max_tickers)
-        if auto_select:
-            st.info(f"🎲 Auto-selected {len(selected_tickers)} random tickers for vetting")
+        
+        if selection_mode == "Random Mode":
+            # Random mode: Pure random selection, no special logic
+            random.seed()  # Use current time for true randomness
+            selected_tickers = random.sample(raw_tickers, max_tickers)
+            st.info(f"🎲 Random mode: Selected {len(selected_tickers)} completely random tickers")
+        else:
+            # Auto mode: Smart sampling with reproducible seed for consistency
+            random.seed(42)  # For reproducible results during session
+            selected_tickers = random.sample(raw_tickers, max_tickers)
+            st.info(f"🎯 Auto mode: Selected {len(selected_tickers)} tickers for smart vetting")
 else:
     selected_tickers = raw_tickers
-    if auto_select:
+    if selection_mode in ["Auto Mode", "Random Mode"]:
         st.info(f"📊 Processing all {len(raw_tickers)} available tickers (less than 10 found)")
     else:
         st.info(f"📊 Processing all {len(raw_tickers)} available tickers")
