@@ -5,6 +5,7 @@ Supports US (Yahoo Finance) and Canadian (money.tmx.com) data sources.
 """
 
 import os
+import sys
 import streamlit as st
 import yfinance as yf
 import pandas as pd
@@ -19,6 +20,11 @@ import random
 from datetime import datetime
 from urllib.error import HTTPError
 from requests.exceptions import RequestException, Timeout, ConnectionError
+
+# Add current file's directory to Python path for reliable imports
+current_dir = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, current_dir)
+
 from ticker_utils import TickerManager, get_fallback_tickers
 
 # ── Page config ──────────────────────────────────────────────────────────────
