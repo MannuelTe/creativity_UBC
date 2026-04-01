@@ -2,6 +2,8 @@
 Microcap Stock Screener & AI Research Tool
 Uses yfinance for stock data and Claude API (with web search) for research.
 Supports US (Yahoo Finance) and Canadian (money.tmx.com) data sources.
+
+This app is designed to be launched from the creativity_UBC folder.
 """
 
 import os
@@ -21,15 +23,21 @@ from datetime import datetime
 from urllib.error import HTTPError
 from requests.exceptions import RequestException, Timeout, ConnectionError
 
-# Add current file's directory to Python path for reliable imports
-current_dir = os.path.dirname(os.path.abspath(__file__))
-sys.path.insert(0, current_dir)
+# Add microcap directory to Python path for reliable imports
+# This allows the app to be launched from creativity_UBC folder
+microcap_dir = os.path.join(os.getcwd(), 'microcap')
+if microcap_dir not in sys.path:
+    sys.path.insert(0, microcap_dir)
 
 from ticker_utils import TickerManager, get_fallback_tickers
 
 # ── Page config ──────────────────────────────────────────────────────────────
-st.set_page_config(page_title="Microcap Screener", layout="wide")
+st.set_page_config(page_title="Creativity Project", layout="wide")
 st.title("🔬 Microcap Stock Screener & AI Analyst")
+
+# DEBUG: This should appear if the correct file is loaded
+st.sidebar.markdown("**🔧 DEBUG: FIXED VERSION LOADED ✅**")
+st.sidebar.markdown(f"*File: {__file__}*")
 
 # ── Configure logging and warnings ──────────────────────────────────────────
 # Suppress yfinance and urllib warnings that show 404 errors to users
@@ -1080,6 +1088,6 @@ Price Context: {research.get('verdict',{}).get('price_context','N/A')}
 st.sidebar.divider()
 st.sidebar.caption(
     "⚠️ This tool is for educational purposes only. Not financial advice. "
-    "AI research may contain inaccuracies — always verify before investing."
+    "AI research may contain inaccuracies — always verify before investing. "
     "Manuel Trachsler, April 2026"
 )

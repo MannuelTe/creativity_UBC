@@ -1,10 +1,13 @@
 """
 Ticker Management System for Microcap Screener
 Loads tickers from JSON files and provides utilities for ticker management.
+
+This module handles file paths to work when launched from creativity_UBC folder.
 """
 
 import json
 import logging
+import os
 from pathlib import Path
 from typing import Dict, List, Optional, Set, Tuple
 from datetime import datetime
@@ -16,9 +19,17 @@ class TickerManager:
     
     def __init__(self, config_file: str = "ticker_config.json"):
         """Initialize ticker manager with config file"""
-        self.config_file = Path(config_file)
+        # Ensure we use the correct path when launched from parent directory
+        self.microcap_dir = Path(__file__).parent
+        self.config_file = self.microcap_dir / config_file
         self.config = self._load_config()
         self._cached_tickers = {}
+    
+    def _resolve_file_path(self, filename: str) -> Path:
+        """Resolve file path relative to microcap directory"""
+        if Path(filename).is_absolute():
+            return Path(filename)
+        return self.microcap_dir / filename
     
     def _load_config(self) -> Dict:
         """Load ticker configuration"""
@@ -34,12 +45,13 @@ class TickerManager:
     
     def _load_ticker_file(self, filename: str) -> List[str]:
         """Load tickers from a JSON file"""
+        file_path = self._resolve_file_path(filename)
         try:
-            with open(filename, 'r') as f:
+            with open(file_path, 'r') as f:
                 data = json.load(f)
                 return data.get("tickers", [])
         except (FileNotFoundError, json.JSONDecodeError) as e:
-            logger.error(f"Error loading ticker file {filename}: {e}")
+            logger.error(f"Error loading ticker file {file_path}: {e}")
             return []
     
     def get_exchange_tickers(self, exchange: str) -> List[str]:
@@ -60,8 +72,9 @@ class TickerManager:
         
         # Add suffix if specified
         ticker_data = {}
+        file_path = self._resolve_file_path(ticker_file)
         try:
-            with open(ticker_file, 'r') as f:
+            with open(file_path, 'r') as f:
                 ticker_data = json.load(f)
         except:
             pass
@@ -93,12 +106,17 @@ class TickerManager:
         else:
             filename = self.config.get("validation", {}).get("valid_tickers_file")
         
-        if not filename or not Path(filename).exists():
-            logger.warning(f"Validated ticker file not found: {filename}")
+        if not filename:
+            logger.warning(f"Validated ticker file not configured")
+            return []
+            
+        file_path = self._resolve_file_path(filename)
+        if not file_path.exists():
+            logger.warning(f"Validated ticker file not found: {file_path}")
             return []
         
         try:
-            with open(filename, 'r') as f:
+            with open(file_path, 'r') as f:
                 data = json.load(f)
                 tickers_data = data.get("tickers", [])
                 
@@ -130,7 +148,10 @@ class TickerManager:
         """Check if validated ticker files exist"""
         validation_config = self.config.get("validation", {})
         small_caps_file = validation_config.get("small_caps_file")
-        return small_caps_file and Path(small_caps_file).exists()
+        if not small_caps_file:
+            return False
+        file_path = self._resolve_file_path(small_caps_file)
+        return file_path.exists()
     
     def get_validation_info(self) -> Optional[Dict]:
         """Get information about last validation run"""
@@ -139,9 +160,13 @@ class TickerManager:
         
         validation_config = self.config.get("validation", {})
         small_caps_file = validation_config.get("small_caps_file")
+        if not small_caps_file:
+            return None
+            
+        file_path = self._resolve_file_path(small_caps_file)
         
         try:
-            with open(small_caps_file, 'r') as f:
+            with open(file_path, 'r') as f:
                 data = json.load(f)
                 return data.get("metadata", {})
         except Exception as e:
