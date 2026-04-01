@@ -1,0 +1,6 @@
+./microcap/.streamlit/secrets.toml
+secrets.toml
+__pycache__/
+*.pyc
+.env
+*.toml

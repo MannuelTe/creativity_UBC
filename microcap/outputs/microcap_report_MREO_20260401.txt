@@ -1,0 +1,38 @@
+MICROCAP RESEARCH REPORT
+============================================================
+Company: Mereo BioPharma Group plc (MREO)
+Date: 2026-04-01 08:51
+============================================================
+
+VALUATION MULTIPLES
+----------------------------------------
+P/E Ratio: <cite index="1-2,3-1,3-21">-1.59 (TTM)</cite> vs <cite index="1-3">industry average of 2.368</cite>
+P/S Ratio: <cite index="20-16">766.67</cite>, significantly higher than historical norms
+P/B Ratio: <cite index="3-1,3-21">1.33</cite> to <cite index="5-1,5-9">2.4x</cite> (conflicting sources)
+EV/EBITDA: Data unavailable
+Peer Comparison: <cite index="5-14">Good value versus US Biotechs industry, as its 2.4x P/B sits below the industry average of 2.7x</cite>
+
+GROWTH EXPECTATIONS
+----------------------------------------
+Industry Outlook: <cite index="31-1,31-3">The biotech sector is entering 2026 with a positive outlook, characterized by reasonable valuations, robust oncology momentum and supportive policy tailwinds</cite>. <cite index="35-11">The global biotechnology market size is predicted to increase from USD 2.02 trillion in 2026 to approximately USD 6.34 trillion by 2035, representing a CAGR of 13.61%</cite>.
+Company Growth: <cite index="3-20">In the last 12 months the Company had a revenue of $500.00 Thousand, which generated a loss in the amount of $-41.58 Millions</cite>. <cite index="10-11,10-12">Next quarter's sales forecast for MREO is $23.33M with a range of $0.00 to $35.00M. The previous quarter's sales results were $0.00</cite>.
+Analyst Consensus: <cite index="7-6,7-7">According to 5 analysts, the average rating for MREO stock is 'Buy.' The 12-month stock price target is $3.13, which is an increase of 815.21% from the latest price</cite>. <cite index="10-16,10-18,10-22,10-23">Based on 8 Wall Street analysts, the average price target is $1.75 with upside potential of 372.97%</cite>.
+
+MANAGEMENT & NEWS
+----------------------------------------
+Key Executives: <cite index="22-2,22-3">Dr. Denise Scots-Knight is CEO and co-founder of Mereo</cite>. <cite index="22-6,22-7,22-8">With over 25 years of experience in the biopharmaceutical industry, she previously served as Managing Partner at Phase4 Partners (Nomura Phase4 Ventures), and before that was at Rothschild Asset Management</cite>. <cite index="26-3">The management team includes Charles Sermon (General Counsel and Co-Founder), and Clive Whitcher (Head of Patient Access)</cite>.
+Recent News: <cite index="13-3,13-4">December 29, 2025: Phase 3 ORBIT and COSMIC studies for setrusumab failed to meet primary endpoints of reducing fracture rates but achieved secondary endpoints of bone mineral density improvements</cite>. <cite index="12-2,52-5">January 12, 2026: Company updated cash runway guidance - $41 million as of December 31, 2025, expected to fund operations to mid-2027</cite>. <cite index="41-4,41-7">Multiple class action lawsuits filed alleging misleading statements about setrusumab trials between June 2023-December 2025, with lead plaintiff deadline of April 6, 2026</cite>. <cite index="12-10,12-11">Company out-licensed vantictumab to āshibio, Inc. with Phase 2 study planned for H2 2026</cite>. <cite index="52-9">Continuing active discussions with potential partners for alvelestat Phase 3 development</cite>.
+Local Context: <cite index="2-3">Company is headquartered in London, United Kingdom</cite>. <cite index="12-19">Mereo has retained EU and UK commercial rights for setrusumab</cite>.
+
+PENDING CATALYSTS
+----------------------------------------
+Upcoming Events: <cite index="52-7,52-8">Phase 3 trial for alvelestat planned enrolling approximately 220 AATD-LD patients over 18 months, with SGRQ Total Score as primary endpoint for US approval and lung density CT scan for European approval</cite>. <cite index="12-11,54-11">Partner āshibio plans to initiate Phase 2 study for vantictumab in H2 2026</cite>. <cite index="12-7,12-8">Additional data analyses from setrusumab Phase 3 studies ongoing to determine potential regulatory path forward</cite>.
+Potential Upside: <cite index="52-14,52-15,52-16">No FDA or EMA approved treatments exist for OI, representing high unmet need, with company assessing potential regulatory interactions</cite>. <cite index="18-13,18-18">Partnership with Ultragenyx includes potential additional milestone payments of up to $245 million and royalties</cite>. <cite index="52-9">Active partnering discussions for alvelestat could provide significant value</cite>.
+Potential Risks: <cite index="41-4,44-10">Class action lawsuits alleging misleading statements about setrusumab trial prospects</cite>. <cite index="52-5">Cash runway only extends to mid-2027</cite>. <cite index="13-3">Key setrusumab program failed primary endpoints in Phase 3 trials</cite>. <cite index="6-22,6-23">High risk rating due to unstable profits and significant drawdowns</cite>.
+
+VERDICT
+----------------------------------------
+Classification: MOMENTUM PLAY
+Confidence: LOW
+Reasoning: <cite index="13-3,14-5">The company's lead program setrusumab failed Phase 3 primary endpoints in December 2025</cite>, triggering <cite index="41-4">multiple class action lawsuits</cite> and creating significant near-term uncertainty. However, <cite index="7-6,10-18">analysts maintain strong Buy ratings with 372-815% upside targets</cite>, suggesting potential value if regulatory path emerges or partnering deals materialize. <cite index="52-5">Limited cash runway to mid-2027</cite> creates urgency for partnerships. <cite index="3-4,14-24">Stock has declined -85.27% over the past year to current levels around $0.37-0.39</cite>, representing extreme downside already priced in.
+Price Context: <cite index="3-14,3-24">Current stock price of $0.39 with -85.27% return over the last year</cite>. <cite index="5-8">Share price at US$0.72 against analyst price target of US$3.45</cite> (note: conflicting current price data). <cite index="10-22,10-23">Average analyst price target of $1.75 represents 372.97% upside from $0.37 level</cite>.

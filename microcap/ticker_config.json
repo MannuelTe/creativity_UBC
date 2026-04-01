@@ -1,0 +1,35 @@
+{
+  "version": "1.0",
+  "last_updated": "2026-04-01",
+  "exchanges": {
+    "US": {
+      "file": "tickers_us.json",
+      "name": "US Stocks (NASDAQ/NYSE)",
+      "api_source": "yahoo_finance",
+      "enabled": true
+    },
+    "TSX": {
+      "file": "tickers_tsx.json", 
+      "name": "Toronto Stock Exchange",
+      "api_source": "yahoo_finance",
+      "enabled": true
+    },
+    "TSXV": {
+      "file": "tickers_tsxv.json",
+      "name": "TSX Venture Exchange", 
+      "api_source": "alpha_vantage",
+      "enabled": true
+    }
+  },
+  "validation": {
+    "last_run": null,
+    "valid_tickers_file": "tickers_validated.json",
+    "small_caps_file": "tickers_small_caps.json"
+  },
+  "settings": {
+    "max_market_cap_threshold_m": 1000,
+    "min_market_cap_threshold_m": 1,
+    "validation_batch_size": 50,
+    "alpha_vantage_rate_limit_per_minute": 5
+  }
+}

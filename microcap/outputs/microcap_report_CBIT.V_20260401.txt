@@ -1,0 +1,59 @@
+MICROCAP RESEARCH REPORT
+============================================================
+Company: CATHEDRA BITCOIN INC (CBIT.V)
+Date: 2026-04-01 09:50
+Data Source: TSXV (Canada Venture)
+============================================================
+
+VALUATION MULTIPLES
+----------------------------------------
+P/E Ratio: N/A (negative earnings)
+P/S Ratio: ~0.25 (C$5.3M market cap vs C$21.2M revenue)
+P/B Ratio: N/A (data insufficient)
+EV/EBITDA: N/A (negative EBITDA)
+Peer Comparison: Trades at significant discount to larger bitcoin miners like Marathon Digital which trade at higher revenue multiples.
+
+GROWTH EXPECTATIONS
+----------------------------------------
+Industry Outlook: Bitcoin mining sector faces profitability pressure with hash prices at $29/PH/s/day and increasing pivot to AI infrastructure for revenue diversification.
+Company Growth: Revenue declined 8% to C$21.2M in 2025 but company expanding capacity to 50MW through Sphere 3D merger and new hosting agreements.
+Analyst Consensus: Negative near-term outlook due to compressed mining margins but potential upside from infrastructure expansion and AI pivot strategy.
+
+MANAGEMENT & NEWS
+----------------------------------------
+Key Executives: Joel Block (CEO, appointed July 2025, formerly CFO US Bitcoin Corp), Drew Armstrong (Chairman/President), AJ Scalia (former CEO, now advisor)
+Recent News: ['March 2026: Announced merger with Sphere 3D Corp in all-stock transaction', 'December 2025: Secured new 10MW hosting deal with Sphere 3D Mining, expanding capacity', 'November 2025: Q3 revenue C$5.5M with continued infrastructure buildout']
+Local Context: Canadian bitcoin mining companies face regulatory clarity while benefiting from renewable energy access and stable grid infrastructure.
+
+LOCAL NEWS & RECENT DEVELOPMENTS
+----------------------------------------
+Sentiment Summary: Recent news sentiment is cautiously positive with operational expansion and strategic merger offsetting concerns about mining profitability pressure.
+
+  [NEUTRAL] 2026-03-24 - Cathedra Reports 2025 Financial Results (Newsfile Corp)
+    Company reported C$21.2M revenue but C$9.7M net loss for 2025 amid challenging mining environment.
+
+  [POSITIVE] 2026-03-05 - Cathedra and Sphere 3D Announce Business Combination (Newsfile Corp)
+    All-stock merger creates larger bitcoin mining and digital infrastructure operator.
+
+  [POSITIVE] 2025-12-03 - Corporate and Operational Updates (Newsfile Corp)
+    New 10MW hosting agreement with Sphere 3D and expansion approvals boost capacity outlook.
+
+  [BULLISH] [PARTNERSHIP] 2026-03-05 - Sphere 3D Merger Agreement
+    Definitive agreement for all-stock business combination to create larger mining operation.
+
+  [BULLISH] [OPERATIONAL] 2025-12-03 - Capacity Expansion Updates
+    Secured 10MW hosting deal and 5MW Brickyard expansion approval bringing total to 50MW.
+
+
+PENDING CATALYSTS
+----------------------------------------
+Upcoming Events: Sphere 3D merger completion expected 2026, earnings April 30 2026, Brickyard site 5MW expansion completion
+Potential Upside: Merger creates larger scale operator with diversified revenue streams and potential AI infrastructure monetization.
+Potential Risks: Compressed bitcoin mining margins and high debt levels from recent C$9.7M net loss could pressure operations.
+
+VERDICT
+----------------------------------------
+Classification: UNDERVALUED
+Confidence: MEDIUM
+Reasoning: Trading at 0.25x revenue multiple well below sector peers despite operational expansion and strategic positioning through merger. Infrastructure pivot and capacity growth provide upside potential despite near-term margin pressure.
+Price Context: Stock declined significantly from C$2.70 52-week high to current C$0.58 levels amid sector-wide mining profitability concerns.
