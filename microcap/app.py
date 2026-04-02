@@ -8,6 +8,7 @@ This app is designed to be launched from the creativity_UBC folder.
 
 import os
 import sys
+import html
 from pathlib import Path
 
 import streamlit as st
@@ -35,8 +36,475 @@ from market_data import (
 from ticker_utils import TickerManager, TickerRecord, get_fallback_tickers, infer_ticker_record
 
 # ── Page config ──────────────────────────────────────────────────────────────
-st.set_page_config(page_title="Creativity Project", layout="wide")
-st.title("🔬 Microcap Stock Screener & AI Analyst")
+st.set_page_config(page_title="Creativity Project", layout="wide", initial_sidebar_state="expanded")
+
+
+def inject_webflow_theme() -> None:
+    st.markdown(
+        """
+        <style>
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inconsolata:wght@400;500;600&display=swap');
+
+        :root {
+            --wf-ink: #080808;
+            --wf-blue: #146ef5;
+            --wf-blue-dark: #0055d4;
+            --wf-blue-soft: #3b89ff;
+            --wf-purple: #7a3dff;
+            --wf-pink: #ed52cb;
+            --wf-green: #00d722;
+            --wf-orange: #ff6b00;
+            --wf-yellow: #ffae13;
+            --wf-red: #ee1d36;
+            --wf-border: #d8d8d8;
+            --wf-border-hover: #898989;
+            --wf-muted: #5a5a5a;
+            --wf-shadow:
+                rgba(0,0,0,0) 0px 84px 24px,
+                rgba(0,0,0,0.01) 0px 54px 22px,
+                rgba(0,0,0,0.04) 0px 30px 18px,
+                rgba(0,0,0,0.08) 0px 13px 13px,
+                rgba(0,0,0,0.09) 0px 3px 7px;
+        }
+
+        html, body, [class*="css"] {
+            font-family: "Space Grotesk", Arial, sans-serif;
+            color: var(--wf-ink);
+        }
+
+        .stApp {
+            background:
+                radial-gradient(circle at 100% 0%, rgba(20, 110, 245, 0.10), transparent 26%),
+                radial-gradient(circle at 0% 20%, rgba(122, 61, 255, 0.05), transparent 20%),
+                linear-gradient(180deg, #ffffff 0%, #ffffff 100%);
+        }
+
+        [data-testid="stHeader"] {
+            background: transparent;
+        }
+
+        [data-testid="stToolbar"] {
+            right: 1rem;
+        }
+
+        [data-testid="block-container"] {
+            max-width: 1280px;
+            padding-top: 1.5rem;
+            padding-bottom: 4rem;
+        }
+
+        [data-testid="stSidebar"] {
+            border-right: 1px solid var(--wf-border);
+            background:
+                linear-gradient(180deg, rgba(20, 110, 245, 0.05) 0%, rgba(255, 255, 255, 0.94) 18%, #ffffff 100%);
+        }
+
+        [data-testid="stSidebar"] > div:first-child {
+            padding-top: 1rem;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--wf-ink);
+            font-family: "Space Grotesk", Arial, sans-serif;
+            font-weight: 600;
+            letter-spacing: -0.03em;
+        }
+
+        h2 {
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            line-height: 1.04;
+            margin-top: 0.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        h3 {
+            font-size: 1.35rem;
+            line-height: 1.2;
+        }
+
+        p, li, label, [data-testid="stMarkdownContainer"], .stCaption {
+            color: var(--wf-ink);
+            font-size: 0.99rem;
+        }
+
+        code, pre {
+            font-family: "Inconsolata", monospace !important;
+        }
+
+        .wf-kicker {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.4rem 0.65rem;
+            border: 1px solid rgba(20, 110, 245, 0.18);
+            border-radius: 4px;
+            background: rgba(20, 110, 245, 0.08);
+            color: var(--wf-blue);
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 1.4px;
+            text-transform: uppercase;
+            width: fit-content;
+        }
+
+        .wf-hero {
+            position: relative;
+            overflow: hidden;
+            border: 1px solid var(--wf-border);
+            border-radius: 8px;
+            padding: clamp(1.25rem, 2vw, 2rem);
+            margin: 0 0 1.5rem 0;
+            background:
+                linear-gradient(135deg, rgba(20, 110, 245, 0.06) 0%, rgba(255, 255, 255, 0.96) 26%, rgba(255, 255, 255, 1) 100%);
+            box-shadow: var(--wf-shadow);
+        }
+
+        .wf-hero::after {
+            content: "";
+            position: absolute;
+            inset: auto -10% -48% auto;
+            width: 320px;
+            height: 320px;
+            background: radial-gradient(circle, rgba(237, 82, 203, 0.10) 0%, rgba(122, 61, 255, 0.05) 42%, transparent 72%);
+            pointer-events: none;
+        }
+
+        .wf-hero-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 1.6fr) minmax(320px, 0.9fr);
+            gap: 1.25rem;
+            align-items: stretch;
+            position: relative;
+            z-index: 1;
+        }
+
+        .wf-hero-copy h1 {
+            font-size: clamp(3rem, 6vw, 5rem);
+            line-height: 1.04;
+            margin: 1rem 0 0.85rem 0;
+        }
+
+        .wf-hero-copy p {
+            max-width: 46rem;
+            font-size: clamp(1.05rem, 2vw, 1.2rem);
+            line-height: 1.45;
+            color: var(--wf-muted);
+            margin-bottom: 1rem;
+        }
+
+        .wf-pill-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.55rem;
+            margin-top: 1rem;
+        }
+
+        .wf-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+            min-height: 2rem;
+            padding: 0.35rem 0.7rem;
+            border-radius: 4px;
+            border: 1px solid rgba(20, 110, 245, 0.16);
+            background: rgba(20, 110, 245, 0.06);
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 0.7px;
+            text-transform: uppercase;
+        }
+
+        .wf-pill::before {
+            content: "";
+            width: 0.52rem;
+            height: 0.52rem;
+            border-radius: 50%;
+            background: var(--wf-blue);
+            flex: 0 0 auto;
+        }
+
+        .wf-pill.purple { color: var(--wf-purple); background: rgba(122, 61, 255, 0.08); border-color: rgba(122, 61, 255, 0.16); }
+        .wf-pill.purple::before { background: var(--wf-purple); }
+        .wf-pill.green { color: #088d1d; background: rgba(0, 215, 34, 0.08); border-color: rgba(0, 215, 34, 0.2); }
+        .wf-pill.green::before { background: var(--wf-green); }
+        .wf-pill.orange { color: #c84c00; background: rgba(255, 107, 0, 0.08); border-color: rgba(255, 107, 0, 0.2); }
+        .wf-pill.orange::before { background: var(--wf-orange); }
+
+        .wf-hero-panel {
+            display: grid;
+            gap: 0.8rem;
+        }
+
+        .wf-mini-card {
+            border: 1px solid var(--wf-border);
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.96);
+            box-shadow: var(--wf-shadow);
+            padding: 1rem;
+        }
+
+        .wf-mini-card-label {
+            display: block;
+            margin-bottom: 0.45rem;
+            font-size: 0.68rem;
+            font-weight: 600;
+            letter-spacing: 1.25px;
+            text-transform: uppercase;
+            color: var(--wf-muted);
+        }
+
+        .wf-mini-card-value {
+            display: block;
+            font-size: clamp(1.6rem, 3vw, 2.35rem);
+            line-height: 1;
+            font-weight: 600;
+            letter-spacing: -0.05em;
+            color: var(--wf-ink);
+            margin-bottom: 0.4rem;
+        }
+
+        .wf-mini-card-note {
+            font-size: 0.9rem;
+            line-height: 1.45;
+            color: var(--wf-muted);
+        }
+
+        .wf-section-intro {
+            margin: 1.5rem 0 0.4rem;
+        }
+
+        .wf-section-intro p {
+            color: var(--wf-muted);
+            margin: 0.25rem 0 0 0;
+        }
+
+        .stAlert, [data-testid="stMetric"], [data-testid="stDataFrame"], [data-testid="stTable"], [data-testid="stExpander"] details {
+            border-radius: 8px !important;
+            border: 1px solid var(--wf-border) !important;
+            box-shadow: var(--wf-shadow) !important;
+            background: rgba(255, 255, 255, 0.96) !important;
+        }
+
+        [data-testid="stMetric"] {
+            padding: 1rem 1rem 0.85rem 1rem;
+        }
+
+        [data-testid="stMetricLabel"] {
+            font-size: 0.72rem !important;
+            font-weight: 600 !important;
+            letter-spacing: 1.25px !important;
+            text-transform: uppercase !important;
+            color: var(--wf-muted) !important;
+        }
+
+        [data-testid="stMetricValue"] {
+            font-size: clamp(1.8rem, 3vw, 2.5rem) !important;
+            font-weight: 600 !important;
+            letter-spacing: -0.05em !important;
+        }
+
+        [data-testid="stExpander"] details summary {
+            padding-top: 0.2rem;
+            padding-bottom: 0.2rem;
+        }
+
+        [data-testid="stExpander"] details summary p {
+            font-size: 0.76rem !important;
+            font-weight: 600 !important;
+            letter-spacing: 1.2px !important;
+            text-transform: uppercase !important;
+        }
+
+        .stButton > button,
+        .stDownloadButton > button,
+        div[data-testid="stFormSubmitButton"] > button {
+            min-height: 48px;
+            border-radius: 4px !important;
+            border: 1px solid var(--wf-blue) !important;
+            background: var(--wf-blue) !important;
+            color: white !important;
+            font-size: 1rem !important;
+            font-weight: 600 !important;
+            letter-spacing: -0.02em !important;
+            box-shadow: var(--wf-shadow) !important;
+            transition: transform 160ms ease, background 160ms ease, box-shadow 160ms ease !important;
+        }
+
+        .stButton > button:hover,
+        .stDownloadButton > button:hover,
+        div[data-testid="stFormSubmitButton"] > button:hover {
+            transform: translateX(6px);
+            background: var(--wf-blue-dark) !important;
+            border-color: var(--wf-blue-dark) !important;
+        }
+
+        .stButton > button:focus,
+        .stDownloadButton > button:focus,
+        div[data-testid="stFormSubmitButton"] > button:focus {
+            outline: none !important;
+            box-shadow: 0 0 0 3px rgba(20, 110, 245, 0.18), var(--wf-shadow) !important;
+        }
+
+        .stCheckbox label, .stRadio label, [data-testid="stWidgetLabel"] p {
+            font-size: 0.75rem !important;
+            font-weight: 600 !important;
+            letter-spacing: 1.15px !important;
+            text-transform: uppercase !important;
+        }
+
+        .stTextInput input,
+        .stTextArea textarea,
+        .stNumberInput input,
+        [data-baseweb="select"] > div,
+        [data-baseweb="tag"],
+        [data-baseweb="textarea"] {
+            border-radius: 4px !important;
+            border: 1px solid var(--wf-border) !important;
+            box-shadow: none !important;
+            background: rgba(255, 255, 255, 0.96) !important;
+        }
+
+        .stTextInput input:focus,
+        .stTextArea textarea:focus,
+        .stNumberInput input:focus,
+        [data-baseweb="select"] > div:focus-within {
+            border-color: var(--wf-blue-soft) !important;
+            box-shadow: 0 0 0 3px rgba(20, 110, 245, 0.12) !important;
+        }
+
+        [data-baseweb="select"] * {
+            color: var(--wf-ink) !important;
+        }
+
+        [data-baseweb="select"] input::placeholder {
+            color: var(--wf-muted) !important;
+            -webkit-text-fill-color: var(--wf-muted) !important;
+        }
+
+        [data-baseweb="tag"] {
+            background: rgba(20, 110, 245, 0.08) !important;
+            color: var(--wf-ink) !important;
+        }
+
+        [data-baseweb="popover"] [role="listbox"],
+        [data-baseweb="popover"] [role="option"] {
+            background: #ffffff !important;
+            color: var(--wf-ink) !important;
+        }
+
+        [data-baseweb="popover"] [role="option"][aria-selected="true"] {
+            background: rgba(20, 110, 245, 0.08) !important;
+        }
+
+        [data-baseweb="slider"] [role="slider"] {
+            background: var(--wf-blue) !important;
+            border-color: var(--wf-blue) !important;
+            box-shadow: none !important;
+        }
+
+        [data-baseweb="slider"] > div > div {
+            background: rgba(20, 110, 245, 0.15) !important;
+        }
+
+        .stCaption {
+            color: var(--wf-muted) !important;
+        }
+
+        hr {
+            border-color: var(--wf-border);
+        }
+
+        @media (max-width: 992px) {
+            .wf-hero-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            [data-testid="block-container"] {
+                padding-top: 1rem;
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+
+            .wf-hero {
+                padding: 1rem;
+            }
+
+            .wf-hero-copy h1 {
+                font-size: 2.5rem;
+            }
+        }
+        </style>
+        """,
+        unsafe_allow_html=True,
+    )
+
+
+def render_hero(
+    universe_count: int,
+    selected_count: int,
+    validated_enabled: bool,
+    source_count: int,
+    selection_mode: str,
+) -> None:
+    validated_label = "Validated Snapshot" if validated_enabled else "Curated Universe"
+    st.markdown(
+        f"""
+        <section class="wf-hero">
+          <div class="wf-hero-grid">
+            <div class="wf-hero-copy">
+              <div class="wf-kicker">Microcap Research Surface</div>
+              <h1>Screen tiny companies on a sharper, tool-forward canvas.</h1>
+              <p>
+                Deterministic ticker ranking, explicit Yahoo and Alpha Vantage routing,
+                and one-click AI deep dives in a cleaner blue-white workflow.
+              </p>
+              <div class="wf-pill-row">
+                <span class="wf-pill">Yahoo Finance</span>
+                <span class="wf-pill purple">Alpha Vantage</span>
+                <span class="wf-pill green">{html.escape(validated_label)}</span>
+                <span class="wf-pill orange">{source_count} source{'s' if source_count != 1 else ''}</span>
+              </div>
+            </div>
+            <div class="wf-hero-panel">
+              <div class="wf-mini-card">
+                <span class="wf-mini-card-label">Loaded Universe</span>
+                <span class="wf-mini-card-value">{universe_count}</span>
+                <span class="wf-mini-card-note">Normalized tickers currently available from the selected sources.</span>
+              </div>
+              <div class="wf-mini-card">
+                <span class="wf-mini-card-label">Current Run</span>
+                <span class="wf-mini-card-value">{selected_count}</span>
+                <span class="wf-mini-card-note">Names queued for live screening in this pass.</span>
+              </div>
+              <div class="wf-mini-card">
+                <span class="wf-mini-card-label">Selection Mode</span>
+                <span class="wf-mini-card-value">{html.escape(selection_mode.replace(" Mode", ""))}</span>
+                <span class="wf-mini-card-note">Top-ranked names are preferred unless you switch to random exploration.</span>
+              </div>
+            </div>
+          </div>
+        </section>
+        """,
+        unsafe_allow_html=True,
+    )
+
+
+def render_section_intro(kicker: str, title: str, subtitle: str) -> None:
+    st.markdown(
+        f"""
+        <div class="wf-section-intro">
+          <div class="wf-kicker">{html.escape(kicker)}</div>
+          <h2>{html.escape(title)}</h2>
+          <p>{html.escape(subtitle)}</p>
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
+
+
+inject_webflow_theme()
 
 # DEBUG: This should appear if the correct file is loaded
 #st.sidebar.markdown("**🔧 DEBUG: FIXED VERSION LOADED ✅**")
@@ -117,7 +585,8 @@ INDUSTRY_PE_PROXY = {
 DEFAULT_PROXY_PE = 18.0  # fallback if sector not mapped
 
 # ── Sidebar – filters ───────────────────────────────────────────────────────
-st.sidebar.header("Screening Filters")
+st.sidebar.markdown('<div class="wf-kicker">Control Panel</div>', unsafe_allow_html=True)
+st.sidebar.markdown("### Screening Filters")
 
 max_cap_m = st.sidebar.slider(
     "Maximum Market Cap ($ millions)",
@@ -271,6 +740,14 @@ else:
         st.info(f"📊 Processing all {len(ranked_records)} available tickers")
 
 selected_tickers = [record.display_symbol for record in selected_records]
+
+render_hero(
+    universe_count=len(raw_records),
+    selected_count=len(selected_records),
+    validated_enabled=use_validated,
+    source_count=len(selected_exchanges) + (1 if custom_symbols else 0),
+    selection_mode=selection_mode,
+)
 
 # ── Helpers ──────────────────────────────────────────────────────────────────
 
@@ -444,7 +921,11 @@ def fetch_market_caps_live(ticker_records: list[TickerRecord]) -> pd.DataFrame:
 
 
 # ── Step 1: Screen ──────────────────────────────────────────────────────────
-st.header("1 · Screen for Microcaps")
+render_section_intro(
+    "01 / Screen",
+    "Screen for Microcaps",
+    "Run the ranked universe through live market data and keep only names that survive your cap filter.",
+)
 
 if not selected_tickers:
     st.info("Select at least one data source in the sidebar (or add custom tickers).")
@@ -543,7 +1024,11 @@ if "Description" not in df_filtered.columns:
         st.session_state["df_filtered"] = df_filtered
 
 # ── Step 2: Select & Research ────────────────────────────────────────────────
-st.header("2 · AI-Powered Deep Dive")
+render_section_intro(
+    "02 / Research",
+    "AI-Powered Deep Dive",
+    "Pick one survivor from the screen and expand it into a compact research brief and news snapshot.",
+)
 
 selected_ticker = st.selectbox(
     "Select a company to research",
@@ -718,7 +1203,11 @@ if "research" in st.session_state:
     name = st.session_state["researched_name"]
 
     st.divider()
-    st.header(f"3 · Research Results: {name} ({ticker})")
+    render_section_intro(
+        "03 / Results",
+        f"Research Results: {name} ({ticker})",
+        "Review valuation, growth, management context, recent developments, and export the final write-up.",
+    )
 
     if "raw_response" in research:
         st.markdown(research["raw_response"])
@@ -812,7 +1301,11 @@ if "research" in st.session_state:
         }
         icon = color_map.get(classification, "⚪")
 
-        st.header(f"4 · Verdict: {icon} {classification}")
+        render_section_intro(
+            "04 / Verdict",
+            f"Verdict: {icon} {classification}",
+            "Condensed positioning call from the combined research output.",
+        )
         st.markdown(f"**Confidence:** {confidence}")
         st.markdown(f"**Reasoning:** {v.get('reasoning', 'N/A')}")
         st.markdown(f"**Price Context:** {v.get('price_context', 'N/A')}")
