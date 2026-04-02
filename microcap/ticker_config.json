@@ -30,6 +30,11 @@
     "max_market_cap_threshold_m": 1000,
     "min_market_cap_threshold_m": 1,
     "validation_batch_size": 50,
-    "alpha_vantage_rate_limit_per_minute": 5
+    "alpha_vantage_rate_limit_per_minute": 5,
+    "provider_cache_ttl_seconds": 3600,
+    "request_retry_count": 2,
+    "request_timeout_seconds": 20,
+    "retry_backoff_seconds": 2,
+    "yahoo_request_pause_seconds": 0.25
   }
 }

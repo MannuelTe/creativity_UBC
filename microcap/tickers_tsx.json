@@ -1,40 +1,3804 @@
 {
+  "schema_version": "2.0",
   "exchange": "TSX",
   "description": "Toronto Stock Exchange main board",
   "api_source": "yahoo_finance",
   "suffix": ".TO",
   "tickers": [
-    "LUN", "CS", "ERO", "SIL", "MAG", "OR",
-    "WDO", "BTO", "OGC", "EDV", "KNT", "JAG",
-    "GMIN", "LUG", "TML", "SBB", "PRB",
-    "NGD", "SEA", "FVI", "AEG", "AR", "BIG",
-    "CKG", "ELD", "EMX", "FR", "GLDX", "GOR",
-    "HL", "IVN", "K", "KORE", "LSG", "MAW",
-    "MUX", "NEM", "NGC", "NX", "PGM", "PIE",
-    "REX", "SKE", "SMF", "TKO", "UEX", "WRN",
-    "BIR", "CPG", "CJ", "PEY", "WCP",
-    "TVE", "SGY", "PNE", "HWX",
-    "PRMW", "GXE", "BNE", "YGR", "ARX", "ATH",
-    "BTE", "CVE", "ERF", "FRU", "GEI", "GTE",
-    "IPO", "JOY", "KEL", "LTS", "MEG", "OBE",
-    "PSK", "RRX", "TOU", "VET", "WRG", "XTO",
-    "SHOP", "LSPD", "DCBO", "KXS", "TOI",
-    "TIXT", "PHO", "CDAY", "ENGH",
-    "NVEI", "MDA", "BB", "REAL", "AVO", "CGX",
-    "CSU", "DRDR", "ENDM", "GIB.A", "GSY", "HUT",
-    "MTLO", "QTRH", "RAY.A", "SIS", "VTB", "WELL",
-    "WEED", "ACB", "TLRY", "OGI", "CRON",
-    "HEXO", "VFF", "FIRE", "LABS", "ZENA",
-    "BLU", "NBLY", "MRT", "TRIL",
-    "MDNA", "IMV", "VERY", "CXR", "CRH", "HLS",
-    "PHM", "VMD",
-    "GDI", "CAS", "HPS", "CIGI",
-    "NFI", "BYD", "RUS", "IFP",
-    "AW-UN", "CHR", "EFN", "FCR-UN", "ACO.X",
-    "AGI", "ALA", "BEP-UN", "BIP-UN", "BPO.UN",
-    "CAE", "CCL.B", "CSH.UN", "DHX", "DOL",
-    "DRG", "ENB", "FTS", "H", "KEG",
-    "MG", "NWC", "PKI", "PPL", "RCH", "TFI",
-    "WSP", "XTC"
+    {
+      "canonical_symbol": "LUN.TO",
+      "base_symbol": "LUN",
+      "display_symbol": "LUN.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "LUN.TO",
+        "alpha_vantage": "LUN"
+      },
+      "status": "active",
+      "aliases": [
+        "LUN"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "CS.TO",
+      "base_symbol": "CS",
+      "display_symbol": "CS.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "CS.TO",
+        "alpha_vantage": "CS"
+      },
+      "status": "active",
+      "aliases": [
+        "CS"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "ERO.TO",
+      "base_symbol": "ERO",
+      "display_symbol": "ERO.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "ERO.TO",
+        "alpha_vantage": "ERO"
+      },
+      "status": "active",
+      "aliases": [
+        "ERO"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "SIL.TO",
+      "base_symbol": "SIL",
+      "display_symbol": "SIL.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "SIL.TO",
+        "alpha_vantage": "SIL"
+      },
+      "status": "active",
+      "aliases": [
+        "SIL"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "MAG.TO",
+      "base_symbol": "MAG",
+      "display_symbol": "MAG.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "MAG.TO",
+        "alpha_vantage": "MAG"
+      },
+      "status": "active",
+      "aliases": [
+        "MAG"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "OR.TO",
+      "base_symbol": "OR",
+      "display_symbol": "OR.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "OR.TO",
+        "alpha_vantage": "OR"
+      },
+      "status": "active",
+      "aliases": [
+        "OR"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "WDO.TO",
+      "base_symbol": "WDO",
+      "display_symbol": "WDO.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "WDO.TO",
+        "alpha_vantage": "WDO"
+      },
+      "status": "active",
+      "aliases": [
+        "WDO"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "BTO.TO",
+      "base_symbol": "BTO",
+      "display_symbol": "BTO.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "BTO.TO",
+        "alpha_vantage": "BTO"
+      },
+      "status": "active",
+      "aliases": [
+        "BTO"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "OGC.TO",
+      "base_symbol": "OGC",
+      "display_symbol": "OGC.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "OGC.TO",
+        "alpha_vantage": "OGC"
+      },
+      "status": "active",
+      "aliases": [
+        "OGC"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "EDV.TO",
+      "base_symbol": "EDV",
+      "display_symbol": "EDV.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "EDV.TO",
+        "alpha_vantage": "EDV"
+      },
+      "status": "active",
+      "aliases": [
+        "EDV"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "KNT.TO",
+      "base_symbol": "KNT",
+      "display_symbol": "KNT.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "KNT.TO",
+        "alpha_vantage": "KNT"
+      },
+      "status": "active",
+      "aliases": [
+        "KNT"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "JAG.TO",
+      "base_symbol": "JAG",
+      "display_symbol": "JAG.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "JAG.TO",
+        "alpha_vantage": "JAG"
+      },
+      "status": "active",
+      "aliases": [
+        "JAG"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "GMIN.TO",
+      "base_symbol": "GMIN",
+      "display_symbol": "GMIN.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "GMIN.TO",
+        "alpha_vantage": "GMIN"
+      },
+      "status": "active",
+      "aliases": [
+        "GMIN"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "LUG.TO",
+      "base_symbol": "LUG",
+      "display_symbol": "LUG.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "LUG.TO",
+        "alpha_vantage": "LUG"
+      },
+      "status": "active",
+      "aliases": [
+        "LUG"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "TML.TO",
+      "base_symbol": "TML",
+      "display_symbol": "TML.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "TML.TO",
+        "alpha_vantage": "TML"
+      },
+      "status": "active",
+      "aliases": [
+        "TML"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "SBB.TO",
+      "base_symbol": "SBB",
+      "display_symbol": "SBB.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "SBB.TO",
+        "alpha_vantage": "SBB"
+      },
+      "status": "active",
+      "aliases": [
+        "SBB"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "PRB.TO",
+      "base_symbol": "PRB",
+      "display_symbol": "PRB.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "PRB.TO",
+        "alpha_vantage": "PRB"
+      },
+      "status": "active",
+      "aliases": [
+        "PRB"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "NGD.TO",
+      "base_symbol": "NGD",
+      "display_symbol": "NGD.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "NGD.TO",
+        "alpha_vantage": "NGD"
+      },
+      "status": "active",
+      "aliases": [
+        "NGD"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "SEA.TO",
+      "base_symbol": "SEA",
+      "display_symbol": "SEA.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "SEA.TO",
+        "alpha_vantage": "SEA"
+      },
+      "status": "active",
+      "aliases": [
+        "SEA"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "FVI.TO",
+      "base_symbol": "FVI",
+      "display_symbol": "FVI.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "FVI.TO",
+        "alpha_vantage": "FVI"
+      },
+      "status": "active",
+      "aliases": [
+        "FVI"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "AEG.TO",
+      "base_symbol": "AEG",
+      "display_symbol": "AEG.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "AEG.TO",
+        "alpha_vantage": "AEG"
+      },
+      "status": "active",
+      "aliases": [
+        "AEG"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "AR.TO",
+      "base_symbol": "AR",
+      "display_symbol": "AR.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "AR.TO",
+        "alpha_vantage": "AR"
+      },
+      "status": "active",
+      "aliases": [
+        "AR"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "BIG.TO",
+      "base_symbol": "BIG",
+      "display_symbol": "BIG.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "BIG.TO",
+        "alpha_vantage": "BIG"
+      },
+      "status": "active",
+      "aliases": [
+        "BIG"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "CKG.TO",
+      "base_symbol": "CKG",
+      "display_symbol": "CKG.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "CKG.TO",
+        "alpha_vantage": "CKG"
+      },
+      "status": "active",
+      "aliases": [
+        "CKG"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "ELD.TO",
+      "base_symbol": "ELD",
+      "display_symbol": "ELD.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "ELD.TO",
+        "alpha_vantage": "ELD"
+      },
+      "status": "active",
+      "aliases": [
+        "ELD"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "EMX.TO",
+      "base_symbol": "EMX",
+      "display_symbol": "EMX.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "EMX.TO",
+        "alpha_vantage": "EMX"
+      },
+      "status": "active",
+      "aliases": [
+        "EMX"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "FR.TO",
+      "base_symbol": "FR",
+      "display_symbol": "FR.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "FR.TO",
+        "alpha_vantage": "FR"
+      },
+      "status": "active",
+      "aliases": [
+        "FR"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "GLDX.TO",
+      "base_symbol": "GLDX",
+      "display_symbol": "GLDX.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "GLDX.TO",
+        "alpha_vantage": "GLDX"
+      },
+      "status": "active",
+      "aliases": [
+        "GLDX"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "GOR.TO",
+      "base_symbol": "GOR",
+      "display_symbol": "GOR.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "GOR.TO",
+        "alpha_vantage": "GOR"
+      },
+      "status": "active",
+      "aliases": [
+        "GOR"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "HL.TO",
+      "base_symbol": "HL",
+      "display_symbol": "HL.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "HL.TO",
+        "alpha_vantage": "HL"
+      },
+      "status": "active",
+      "aliases": [
+        "HL"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "IVN.TO",
+      "base_symbol": "IVN",
+      "display_symbol": "IVN.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "IVN.TO",
+        "alpha_vantage": "IVN"
+      },
+      "status": "active",
+      "aliases": [
+        "IVN"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "K.TO",
+      "base_symbol": "K",
+      "display_symbol": "K.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "K.TO",
+        "alpha_vantage": "K"
+      },
+      "status": "active",
+      "aliases": [
+        "K"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "KORE.TO",
+      "base_symbol": "KORE",
+      "display_symbol": "KORE.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "KORE.TO",
+        "alpha_vantage": "KORE"
+      },
+      "status": "active",
+      "aliases": [
+        "KORE"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "LSG.TO",
+      "base_symbol": "LSG",
+      "display_symbol": "LSG.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "LSG.TO",
+        "alpha_vantage": "LSG"
+      },
+      "status": "active",
+      "aliases": [
+        "LSG"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "MAW.TO",
+      "base_symbol": "MAW",
+      "display_symbol": "MAW.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "MAW.TO",
+        "alpha_vantage": "MAW"
+      },
+      "status": "active",
+      "aliases": [
+        "MAW"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "MUX.TO",
+      "base_symbol": "MUX",
+      "display_symbol": "MUX.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "MUX.TO",
+        "alpha_vantage": "MUX"
+      },
+      "status": "active",
+      "aliases": [
+        "MUX"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "NEM.TO",
+      "base_symbol": "NEM",
+      "display_symbol": "NEM.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "NEM.TO",
+        "alpha_vantage": "NEM"
+      },
+      "status": "active",
+      "aliases": [
+        "NEM"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "NGC.TO",
+      "base_symbol": "NGC",
+      "display_symbol": "NGC.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "NGC.TO",
+        "alpha_vantage": "NGC"
+      },
+      "status": "active",
+      "aliases": [
+        "NGC"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "NX.TO",
+      "base_symbol": "NX",
+      "display_symbol": "NX.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "NX.TO",
+        "alpha_vantage": "NX"
+      },
+      "status": "active",
+      "aliases": [
+        "NX"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "PGM.TO",
+      "base_symbol": "PGM",
+      "display_symbol": "PGM.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "PGM.TO",
+        "alpha_vantage": "PGM"
+      },
+      "status": "active",
+      "aliases": [
+        "PGM"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "PIE.TO",
+      "base_symbol": "PIE",
+      "display_symbol": "PIE.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "PIE.TO",
+        "alpha_vantage": "PIE"
+      },
+      "status": "active",
+      "aliases": [
+        "PIE"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "REX.TO",
+      "base_symbol": "REX",
+      "display_symbol": "REX.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "REX.TO",
+        "alpha_vantage": "REX"
+      },
+      "status": "active",
+      "aliases": [
+        "REX"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "SKE.TO",
+      "base_symbol": "SKE",
+      "display_symbol": "SKE.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "SKE.TO",
+        "alpha_vantage": "SKE"
+      },
+      "status": "active",
+      "aliases": [
+        "SKE"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "SMF.TO",
+      "base_symbol": "SMF",
+      "display_symbol": "SMF.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "SMF.TO",
+        "alpha_vantage": "SMF"
+      },
+      "status": "active",
+      "aliases": [
+        "SMF"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "TKO.TO",
+      "base_symbol": "TKO",
+      "display_symbol": "TKO.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "TKO.TO",
+        "alpha_vantage": "TKO"
+      },
+      "status": "active",
+      "aliases": [
+        "TKO"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "UEX.TO",
+      "base_symbol": "UEX",
+      "display_symbol": "UEX.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "UEX.TO",
+        "alpha_vantage": "UEX"
+      },
+      "status": "active",
+      "aliases": [
+        "UEX"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "WRN.TO",
+      "base_symbol": "WRN",
+      "display_symbol": "WRN.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "WRN.TO",
+        "alpha_vantage": "WRN"
+      },
+      "status": "active",
+      "aliases": [
+        "WRN"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "BIR.TO",
+      "base_symbol": "BIR",
+      "display_symbol": "BIR.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "BIR.TO",
+        "alpha_vantage": "BIR"
+      },
+      "status": "active",
+      "aliases": [
+        "BIR"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "CPG.TO",
+      "base_symbol": "CPG",
+      "display_symbol": "CPG.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "CPG.TO",
+        "alpha_vantage": "CPG"
+      },
+      "status": "active",
+      "aliases": [
+        "CPG"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "CJ.TO",
+      "base_symbol": "CJ",
+      "display_symbol": "CJ.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "CJ.TO",
+        "alpha_vantage": "CJ"
+      },
+      "status": "active",
+      "aliases": [
+        "CJ"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "PEY.TO",
+      "base_symbol": "PEY",
+      "display_symbol": "PEY.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "PEY.TO",
+        "alpha_vantage": "PEY"
+      },
+      "status": "active",
+      "aliases": [
+        "PEY"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "WCP.TO",
+      "base_symbol": "WCP",
+      "display_symbol": "WCP.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "WCP.TO",
+        "alpha_vantage": "WCP"
+      },
+      "status": "active",
+      "aliases": [
+        "WCP"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "TVE.TO",
+      "base_symbol": "TVE",
+      "display_symbol": "TVE.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "TVE.TO",
+        "alpha_vantage": "TVE"
+      },
+      "status": "active",
+      "aliases": [
+        "TVE"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "SGY.TO",
+      "base_symbol": "SGY",
+      "display_symbol": "SGY.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "SGY.TO",
+        "alpha_vantage": "SGY"
+      },
+      "status": "active",
+      "aliases": [
+        "SGY"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "PNE.TO",
+      "base_symbol": "PNE",
+      "display_symbol": "PNE.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "PNE.TO",
+        "alpha_vantage": "PNE"
+      },
+      "status": "active",
+      "aliases": [
+        "PNE"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "HWX.TO",
+      "base_symbol": "HWX",
+      "display_symbol": "HWX.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "HWX.TO",
+        "alpha_vantage": "HWX"
+      },
+      "status": "active",
+      "aliases": [
+        "HWX"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "PRMW.TO",
+      "base_symbol": "PRMW",
+      "display_symbol": "PRMW.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "PRMW.TO",
+        "alpha_vantage": "PRMW"
+      },
+      "status": "active",
+      "aliases": [
+        "PRMW"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "GXE.TO",
+      "base_symbol": "GXE",
+      "display_symbol": "GXE.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "GXE.TO",
+        "alpha_vantage": "GXE"
+      },
+      "status": "active",
+      "aliases": [
+        "GXE"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "BNE.TO",
+      "base_symbol": "BNE",
+      "display_symbol": "BNE.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "BNE.TO",
+        "alpha_vantage": "BNE"
+      },
+      "status": "active",
+      "aliases": [
+        "BNE"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "YGR.TO",
+      "base_symbol": "YGR",
+      "display_symbol": "YGR.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "YGR.TO",
+        "alpha_vantage": "YGR"
+      },
+      "status": "active",
+      "aliases": [
+        "YGR"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "ARX.TO",
+      "base_symbol": "ARX",
+      "display_symbol": "ARX.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "ARX.TO",
+        "alpha_vantage": "ARX"
+      },
+      "status": "active",
+      "aliases": [
+        "ARX"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "ATH.TO",
+      "base_symbol": "ATH",
+      "display_symbol": "ATH.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "ATH.TO",
+        "alpha_vantage": "ATH"
+      },
+      "status": "active",
+      "aliases": [
+        "ATH"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "BTE.TO",
+      "base_symbol": "BTE",
+      "display_symbol": "BTE.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "BTE.TO",
+        "alpha_vantage": "BTE"
+      },
+      "status": "active",
+      "aliases": [
+        "BTE"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "CVE.TO",
+      "base_symbol": "CVE",
+      "display_symbol": "CVE.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "CVE.TO",
+        "alpha_vantage": "CVE"
+      },
+      "status": "active",
+      "aliases": [
+        "CVE"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "ERF.TO",
+      "base_symbol": "ERF",
+      "display_symbol": "ERF.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "ERF.TO",
+        "alpha_vantage": "ERF"
+      },
+      "status": "active",
+      "aliases": [
+        "ERF"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "FRU.TO",
+      "base_symbol": "FRU",
+      "display_symbol": "FRU.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "FRU.TO",
+        "alpha_vantage": "FRU"
+      },
+      "status": "active",
+      "aliases": [
+        "FRU"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "GEI.TO",
+      "base_symbol": "GEI",
+      "display_symbol": "GEI.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "GEI.TO",
+        "alpha_vantage": "GEI"
+      },
+      "status": "active",
+      "aliases": [
+        "GEI"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "GTE.TO",
+      "base_symbol": "GTE",
+      "display_symbol": "GTE.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "GTE.TO",
+        "alpha_vantage": "GTE"
+      },
+      "status": "active",
+      "aliases": [
+        "GTE"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "IPO.TO",
+      "base_symbol": "IPO",
+      "display_symbol": "IPO.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "IPO.TO",
+        "alpha_vantage": "IPO"
+      },
+      "status": "active",
+      "aliases": [
+        "IPO"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "JOY.TO",
+      "base_symbol": "JOY",
+      "display_symbol": "JOY.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "JOY.TO",
+        "alpha_vantage": "JOY"
+      },
+      "status": "active",
+      "aliases": [
+        "JOY"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "KEL.TO",
+      "base_symbol": "KEL",
+      "display_symbol": "KEL.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "KEL.TO",
+        "alpha_vantage": "KEL"
+      },
+      "status": "active",
+      "aliases": [
+        "KEL"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "LTS.TO",
+      "base_symbol": "LTS",
+      "display_symbol": "LTS.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "LTS.TO",
+        "alpha_vantage": "LTS"
+      },
+      "status": "active",
+      "aliases": [
+        "LTS"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "MEG.TO",
+      "base_symbol": "MEG",
+      "display_symbol": "MEG.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "MEG.TO",
+        "alpha_vantage": "MEG"
+      },
+      "status": "active",
+      "aliases": [
+        "MEG"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "OBE.TO",
+      "base_symbol": "OBE",
+      "display_symbol": "OBE.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "OBE.TO",
+        "alpha_vantage": "OBE"
+      },
+      "status": "active",
+      "aliases": [
+        "OBE"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "PSK.TO",
+      "base_symbol": "PSK",
+      "display_symbol": "PSK.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "PSK.TO",
+        "alpha_vantage": "PSK"
+      },
+      "status": "active",
+      "aliases": [
+        "PSK"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "RRX.TO",
+      "base_symbol": "RRX",
+      "display_symbol": "RRX.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "RRX.TO",
+        "alpha_vantage": "RRX"
+      },
+      "status": "active",
+      "aliases": [
+        "RRX"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "TOU.TO",
+      "base_symbol": "TOU",
+      "display_symbol": "TOU.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "TOU.TO",
+        "alpha_vantage": "TOU"
+      },
+      "status": "active",
+      "aliases": [
+        "TOU"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "VET.TO",
+      "base_symbol": "VET",
+      "display_symbol": "VET.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "VET.TO",
+        "alpha_vantage": "VET"
+      },
+      "status": "active",
+      "aliases": [
+        "VET"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "WRG.TO",
+      "base_symbol": "WRG",
+      "display_symbol": "WRG.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "WRG.TO",
+        "alpha_vantage": "WRG"
+      },
+      "status": "active",
+      "aliases": [
+        "WRG"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "XTO.TO",
+      "base_symbol": "XTO",
+      "display_symbol": "XTO.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "XTO.TO",
+        "alpha_vantage": "XTO"
+      },
+      "status": "active",
+      "aliases": [
+        "XTO"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "SHOP.TO",
+      "base_symbol": "SHOP",
+      "display_symbol": "SHOP.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "SHOP.TO",
+        "alpha_vantage": "SHOP"
+      },
+      "status": "active",
+      "aliases": [
+        "SHOP"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "LSPD.TO",
+      "base_symbol": "LSPD",
+      "display_symbol": "LSPD.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "LSPD.TO",
+        "alpha_vantage": "LSPD"
+      },
+      "status": "active",
+      "aliases": [
+        "LSPD"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "DCBO.TO",
+      "base_symbol": "DCBO",
+      "display_symbol": "DCBO.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "DCBO.TO",
+        "alpha_vantage": "DCBO"
+      },
+      "status": "active",
+      "aliases": [
+        "DCBO"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "KXS.TO",
+      "base_symbol": "KXS",
+      "display_symbol": "KXS.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "KXS.TO",
+        "alpha_vantage": "KXS"
+      },
+      "status": "active",
+      "aliases": [
+        "KXS"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "TOI.TO",
+      "base_symbol": "TOI",
+      "display_symbol": "TOI.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "TOI.TO",
+        "alpha_vantage": "TOI"
+      },
+      "status": "active",
+      "aliases": [
+        "TOI"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "TIXT.TO",
+      "base_symbol": "TIXT",
+      "display_symbol": "TIXT.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "TIXT.TO",
+        "alpha_vantage": "TIXT"
+      },
+      "status": "active",
+      "aliases": [
+        "TIXT"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "PHO.TO",
+      "base_symbol": "PHO",
+      "display_symbol": "PHO.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "PHO.TO",
+        "alpha_vantage": "PHO"
+      },
+      "status": "active",
+      "aliases": [
+        "PHO"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "CDAY.TO",
+      "base_symbol": "CDAY",
+      "display_symbol": "CDAY.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "CDAY.TO",
+        "alpha_vantage": "CDAY"
+      },
+      "status": "active",
+      "aliases": [
+        "CDAY"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "ENGH.TO",
+      "base_symbol": "ENGH",
+      "display_symbol": "ENGH.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "ENGH.TO",
+        "alpha_vantage": "ENGH"
+      },
+      "status": "active",
+      "aliases": [
+        "ENGH"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "NVEI.TO",
+      "base_symbol": "NVEI",
+      "display_symbol": "NVEI.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "NVEI.TO",
+        "alpha_vantage": "NVEI"
+      },
+      "status": "active",
+      "aliases": [
+        "NVEI"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "MDA.TO",
+      "base_symbol": "MDA",
+      "display_symbol": "MDA.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "MDA.TO",
+        "alpha_vantage": "MDA"
+      },
+      "status": "active",
+      "aliases": [
+        "MDA"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "BB.TO",
+      "base_symbol": "BB",
+      "display_symbol": "BB.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "BB.TO",
+        "alpha_vantage": "BB"
+      },
+      "status": "active",
+      "aliases": [
+        "BB"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "REAL.TO",
+      "base_symbol": "REAL",
+      "display_symbol": "REAL.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "REAL.TO",
+        "alpha_vantage": "REAL"
+      },
+      "status": "active",
+      "aliases": [
+        "REAL"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "AVO.TO",
+      "base_symbol": "AVO",
+      "display_symbol": "AVO.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "AVO.TO",
+        "alpha_vantage": "AVO"
+      },
+      "status": "active",
+      "aliases": [
+        "AVO"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "CGX.TO",
+      "base_symbol": "CGX",
+      "display_symbol": "CGX.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "CGX.TO",
+        "alpha_vantage": "CGX"
+      },
+      "status": "active",
+      "aliases": [
+        "CGX"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "CSU.TO",
+      "base_symbol": "CSU",
+      "display_symbol": "CSU.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "CSU.TO",
+        "alpha_vantage": "CSU"
+      },
+      "status": "active",
+      "aliases": [
+        "CSU"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "DRDR.TO",
+      "base_symbol": "DRDR",
+      "display_symbol": "DRDR.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "DRDR.TO",
+        "alpha_vantage": "DRDR"
+      },
+      "status": "active",
+      "aliases": [
+        "DRDR"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "ENDM.TO",
+      "base_symbol": "ENDM",
+      "display_symbol": "ENDM.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "ENDM.TO",
+        "alpha_vantage": "ENDM"
+      },
+      "status": "active",
+      "aliases": [
+        "ENDM"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "GIB.A.TO",
+      "base_symbol": "GIB.A",
+      "display_symbol": "GIB.A.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "GIB.A.TO",
+        "alpha_vantage": "GIB.A"
+      },
+      "status": "active",
+      "aliases": [
+        "GIB.A"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "GSY.TO",
+      "base_symbol": "GSY",
+      "display_symbol": "GSY.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "GSY.TO",
+        "alpha_vantage": "GSY"
+      },
+      "status": "active",
+      "aliases": [
+        "GSY"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "HUT.TO",
+      "base_symbol": "HUT",
+      "display_symbol": "HUT.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "HUT.TO",
+        "alpha_vantage": "HUT"
+      },
+      "status": "active",
+      "aliases": [
+        "HUT"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "MTLO.TO",
+      "base_symbol": "MTLO",
+      "display_symbol": "MTLO.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "MTLO.TO",
+        "alpha_vantage": "MTLO"
+      },
+      "status": "active",
+      "aliases": [
+        "MTLO"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "QTRH.TO",
+      "base_symbol": "QTRH",
+      "display_symbol": "QTRH.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "QTRH.TO",
+        "alpha_vantage": "QTRH"
+      },
+      "status": "active",
+      "aliases": [
+        "QTRH"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "RAY.A.TO",
+      "base_symbol": "RAY.A",
+      "display_symbol": "RAY.A.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "RAY.A.TO",
+        "alpha_vantage": "RAY.A"
+      },
+      "status": "active",
+      "aliases": [
+        "RAY.A"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "SIS.TO",
+      "base_symbol": "SIS",
+      "display_symbol": "SIS.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "SIS.TO",
+        "alpha_vantage": "SIS"
+      },
+      "status": "active",
+      "aliases": [
+        "SIS"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "VTB.TO",
+      "base_symbol": "VTB",
+      "display_symbol": "VTB.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "VTB.TO",
+        "alpha_vantage": "VTB"
+      },
+      "status": "active",
+      "aliases": [
+        "VTB"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "WELL.TO",
+      "base_symbol": "WELL",
+      "display_symbol": "WELL.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "WELL.TO",
+        "alpha_vantage": "WELL"
+      },
+      "status": "active",
+      "aliases": [
+        "WELL"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "WEED.TO",
+      "base_symbol": "WEED",
+      "display_symbol": "WEED.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "WEED.TO",
+        "alpha_vantage": "WEED"
+      },
+      "status": "active",
+      "aliases": [
+        "WEED"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "ACB.TO",
+      "base_symbol": "ACB",
+      "display_symbol": "ACB.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "ACB.TO",
+        "alpha_vantage": "ACB"
+      },
+      "status": "active",
+      "aliases": [
+        "ACB"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "TLRY.TO",
+      "base_symbol": "TLRY",
+      "display_symbol": "TLRY.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "TLRY.TO",
+        "alpha_vantage": "TLRY"
+      },
+      "status": "active",
+      "aliases": [
+        "TLRY"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "OGI.TO",
+      "base_symbol": "OGI",
+      "display_symbol": "OGI.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "OGI.TO",
+        "alpha_vantage": "OGI"
+      },
+      "status": "active",
+      "aliases": [
+        "OGI"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "CRON.TO",
+      "base_symbol": "CRON",
+      "display_symbol": "CRON.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "CRON.TO",
+        "alpha_vantage": "CRON"
+      },
+      "status": "active",
+      "aliases": [
+        "CRON"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "HEXO.TO",
+      "base_symbol": "HEXO",
+      "display_symbol": "HEXO.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "HEXO.TO",
+        "alpha_vantage": "HEXO"
+      },
+      "status": "active",
+      "aliases": [
+        "HEXO"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "VFF.TO",
+      "base_symbol": "VFF",
+      "display_symbol": "VFF.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "VFF.TO",
+        "alpha_vantage": "VFF"
+      },
+      "status": "active",
+      "aliases": [
+        "VFF"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "FIRE.TO",
+      "base_symbol": "FIRE",
+      "display_symbol": "FIRE.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "FIRE.TO",
+        "alpha_vantage": "FIRE"
+      },
+      "status": "active",
+      "aliases": [
+        "FIRE"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "LABS.TO",
+      "base_symbol": "LABS",
+      "display_symbol": "LABS.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "LABS.TO",
+        "alpha_vantage": "LABS"
+      },
+      "status": "active",
+      "aliases": [
+        "LABS"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "ZENA.TO",
+      "base_symbol": "ZENA",
+      "display_symbol": "ZENA.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "ZENA.TO",
+        "alpha_vantage": "ZENA"
+      },
+      "status": "active",
+      "aliases": [
+        "ZENA"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "BLU.TO",
+      "base_symbol": "BLU",
+      "display_symbol": "BLU.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "BLU.TO",
+        "alpha_vantage": "BLU"
+      },
+      "status": "active",
+      "aliases": [
+        "BLU"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "NBLY.TO",
+      "base_symbol": "NBLY",
+      "display_symbol": "NBLY.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "NBLY.TO",
+        "alpha_vantage": "NBLY"
+      },
+      "status": "active",
+      "aliases": [
+        "NBLY"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "MRT.TO",
+      "base_symbol": "MRT",
+      "display_symbol": "MRT.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "MRT.TO",
+        "alpha_vantage": "MRT"
+      },
+      "status": "active",
+      "aliases": [
+        "MRT"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "TRIL.TO",
+      "base_symbol": "TRIL",
+      "display_symbol": "TRIL.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "TRIL.TO",
+        "alpha_vantage": "TRIL"
+      },
+      "status": "active",
+      "aliases": [
+        "TRIL"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "MDNA.TO",
+      "base_symbol": "MDNA",
+      "display_symbol": "MDNA.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "MDNA.TO",
+        "alpha_vantage": "MDNA"
+      },
+      "status": "active",
+      "aliases": [
+        "MDNA"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "IMV.TO",
+      "base_symbol": "IMV",
+      "display_symbol": "IMV.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "IMV.TO",
+        "alpha_vantage": "IMV"
+      },
+      "status": "active",
+      "aliases": [
+        "IMV"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "VERY.TO",
+      "base_symbol": "VERY",
+      "display_symbol": "VERY.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "VERY.TO",
+        "alpha_vantage": "VERY"
+      },
+      "status": "active",
+      "aliases": [
+        "VERY"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "CXR.TO",
+      "base_symbol": "CXR",
+      "display_symbol": "CXR.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "CXR.TO",
+        "alpha_vantage": "CXR"
+      },
+      "status": "active",
+      "aliases": [
+        "CXR"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "CRH.TO",
+      "base_symbol": "CRH",
+      "display_symbol": "CRH.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "CRH.TO",
+        "alpha_vantage": "CRH"
+      },
+      "status": "active",
+      "aliases": [
+        "CRH"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "HLS.TO",
+      "base_symbol": "HLS",
+      "display_symbol": "HLS.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "HLS.TO",
+        "alpha_vantage": "HLS"
+      },
+      "status": "active",
+      "aliases": [
+        "HLS"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "PHM.TO",
+      "base_symbol": "PHM",
+      "display_symbol": "PHM.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "PHM.TO",
+        "alpha_vantage": "PHM"
+      },
+      "status": "active",
+      "aliases": [
+        "PHM"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "VMD.TO",
+      "base_symbol": "VMD",
+      "display_symbol": "VMD.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "VMD.TO",
+        "alpha_vantage": "VMD"
+      },
+      "status": "active",
+      "aliases": [
+        "VMD"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "GDI.TO",
+      "base_symbol": "GDI",
+      "display_symbol": "GDI.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "GDI.TO",
+        "alpha_vantage": "GDI"
+      },
+      "status": "active",
+      "aliases": [
+        "GDI"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "CAS.TO",
+      "base_symbol": "CAS",
+      "display_symbol": "CAS.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "CAS.TO",
+        "alpha_vantage": "CAS"
+      },
+      "status": "active",
+      "aliases": [
+        "CAS"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "HPS.TO",
+      "base_symbol": "HPS",
+      "display_symbol": "HPS.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "HPS.TO",
+        "alpha_vantage": "HPS"
+      },
+      "status": "active",
+      "aliases": [
+        "HPS"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "CIGI.TO",
+      "base_symbol": "CIGI",
+      "display_symbol": "CIGI.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "CIGI.TO",
+        "alpha_vantage": "CIGI"
+      },
+      "status": "active",
+      "aliases": [
+        "CIGI"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "NFI.TO",
+      "base_symbol": "NFI",
+      "display_symbol": "NFI.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "NFI.TO",
+        "alpha_vantage": "NFI"
+      },
+      "status": "active",
+      "aliases": [
+        "NFI"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "BYD.TO",
+      "base_symbol": "BYD",
+      "display_symbol": "BYD.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "BYD.TO",
+        "alpha_vantage": "BYD"
+      },
+      "status": "active",
+      "aliases": [
+        "BYD"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "RUS.TO",
+      "base_symbol": "RUS",
+      "display_symbol": "RUS.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "RUS.TO",
+        "alpha_vantage": "RUS"
+      },
+      "status": "active",
+      "aliases": [
+        "RUS"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "IFP.TO",
+      "base_symbol": "IFP",
+      "display_symbol": "IFP.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "IFP.TO",
+        "alpha_vantage": "IFP"
+      },
+      "status": "active",
+      "aliases": [
+        "IFP"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "AW-UN.TO",
+      "base_symbol": "AW-UN",
+      "display_symbol": "AW-UN.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "AW-UN.TO",
+        "alpha_vantage": "AW-UN"
+      },
+      "status": "active",
+      "aliases": [
+        "AW-UN"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "CHR.TO",
+      "base_symbol": "CHR",
+      "display_symbol": "CHR.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "CHR.TO",
+        "alpha_vantage": "CHR"
+      },
+      "status": "active",
+      "aliases": [
+        "CHR"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "EFN.TO",
+      "base_symbol": "EFN",
+      "display_symbol": "EFN.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "EFN.TO",
+        "alpha_vantage": "EFN"
+      },
+      "status": "active",
+      "aliases": [
+        "EFN"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "FCR-UN.TO",
+      "base_symbol": "FCR-UN",
+      "display_symbol": "FCR-UN.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "FCR-UN.TO",
+        "alpha_vantage": "FCR-UN"
+      },
+      "status": "active",
+      "aliases": [
+        "FCR-UN"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "ACO.X.TO",
+      "base_symbol": "ACO.X",
+      "display_symbol": "ACO.X.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "ACO.X.TO",
+        "alpha_vantage": "ACO.X"
+      },
+      "status": "active",
+      "aliases": [
+        "ACO.X"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "AGI.TO",
+      "base_symbol": "AGI",
+      "display_symbol": "AGI.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "AGI.TO",
+        "alpha_vantage": "AGI"
+      },
+      "status": "active",
+      "aliases": [
+        "AGI"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "ALA.TO",
+      "base_symbol": "ALA",
+      "display_symbol": "ALA.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "ALA.TO",
+        "alpha_vantage": "ALA"
+      },
+      "status": "active",
+      "aliases": [
+        "ALA"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "BEP-UN.TO",
+      "base_symbol": "BEP-UN",
+      "display_symbol": "BEP-UN.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "BEP-UN.TO",
+        "alpha_vantage": "BEP-UN"
+      },
+      "status": "active",
+      "aliases": [
+        "BEP-UN"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "BIP-UN.TO",
+      "base_symbol": "BIP-UN",
+      "display_symbol": "BIP-UN.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "BIP-UN.TO",
+        "alpha_vantage": "BIP-UN"
+      },
+      "status": "active",
+      "aliases": [
+        "BIP-UN"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "BPO.UN.TO",
+      "base_symbol": "BPO.UN",
+      "display_symbol": "BPO.UN.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "BPO.UN.TO",
+        "alpha_vantage": "BPO.UN"
+      },
+      "status": "active",
+      "aliases": [
+        "BPO.UN"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "CAE.TO",
+      "base_symbol": "CAE",
+      "display_symbol": "CAE.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "CAE.TO",
+        "alpha_vantage": "CAE"
+      },
+      "status": "active",
+      "aliases": [
+        "CAE"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "CCL.B.TO",
+      "base_symbol": "CCL.B",
+      "display_symbol": "CCL.B.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "CCL.B.TO",
+        "alpha_vantage": "CCL.B"
+      },
+      "status": "active",
+      "aliases": [
+        "CCL.B"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "CSH.UN.TO",
+      "base_symbol": "CSH.UN",
+      "display_symbol": "CSH.UN.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "CSH.UN.TO",
+        "alpha_vantage": "CSH.UN"
+      },
+      "status": "active",
+      "aliases": [
+        "CSH.UN"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "DHX.TO",
+      "base_symbol": "DHX",
+      "display_symbol": "DHX.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "DHX.TO",
+        "alpha_vantage": "DHX"
+      },
+      "status": "active",
+      "aliases": [
+        "DHX"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "DOL.TO",
+      "base_symbol": "DOL",
+      "display_symbol": "DOL.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "DOL.TO",
+        "alpha_vantage": "DOL"
+      },
+      "status": "active",
+      "aliases": [
+        "DOL"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "DRG.TO",
+      "base_symbol": "DRG",
+      "display_symbol": "DRG.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "DRG.TO",
+        "alpha_vantage": "DRG"
+      },
+      "status": "active",
+      "aliases": [
+        "DRG"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "ENB.TO",
+      "base_symbol": "ENB",
+      "display_symbol": "ENB.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "ENB.TO",
+        "alpha_vantage": "ENB"
+      },
+      "status": "active",
+      "aliases": [
+        "ENB"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "FTS.TO",
+      "base_symbol": "FTS",
+      "display_symbol": "FTS.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "FTS.TO",
+        "alpha_vantage": "FTS"
+      },
+      "status": "active",
+      "aliases": [
+        "FTS"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "H.TO",
+      "base_symbol": "H",
+      "display_symbol": "H.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "H.TO",
+        "alpha_vantage": "H"
+      },
+      "status": "active",
+      "aliases": [
+        "H"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "KEG.TO",
+      "base_symbol": "KEG",
+      "display_symbol": "KEG.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "KEG.TO",
+        "alpha_vantage": "KEG"
+      },
+      "status": "active",
+      "aliases": [
+        "KEG"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "MG.TO",
+      "base_symbol": "MG",
+      "display_symbol": "MG.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "MG.TO",
+        "alpha_vantage": "MG"
+      },
+      "status": "active",
+      "aliases": [
+        "MG"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "NWC.TO",
+      "base_symbol": "NWC",
+      "display_symbol": "NWC.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "NWC.TO",
+        "alpha_vantage": "NWC"
+      },
+      "status": "active",
+      "aliases": [
+        "NWC"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "PKI.TO",
+      "base_symbol": "PKI",
+      "display_symbol": "PKI.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "PKI.TO",
+        "alpha_vantage": "PKI"
+      },
+      "status": "active",
+      "aliases": [
+        "PKI"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "PPL.TO",
+      "base_symbol": "PPL",
+      "display_symbol": "PPL.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "PPL.TO",
+        "alpha_vantage": "PPL"
+      },
+      "status": "active",
+      "aliases": [
+        "PPL"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "RCH.TO",
+      "base_symbol": "RCH",
+      "display_symbol": "RCH.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "RCH.TO",
+        "alpha_vantage": "RCH"
+      },
+      "status": "active",
+      "aliases": [
+        "RCH"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "TFI.TO",
+      "base_symbol": "TFI",
+      "display_symbol": "TFI.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "TFI.TO",
+        "alpha_vantage": "TFI"
+      },
+      "status": "active",
+      "aliases": [
+        "TFI"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "WSP.TO",
+      "base_symbol": "WSP",
+      "display_symbol": "WSP.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "WSP.TO",
+        "alpha_vantage": "WSP"
+      },
+      "status": "active",
+      "aliases": [
+        "WSP"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    },
+    {
+      "canonical_symbol": "XTC.TO",
+      "base_symbol": "XTC",
+      "display_symbol": "XTC.TO",
+      "exchange": "TSX",
+      "preferred_api": "yahoo_finance",
+      "fallback_apis": [
+        "alpha_vantage"
+      ],
+      "query_symbols": {
+        "yahoo": "XTC.TO",
+        "alpha_vantage": "XTC"
+      },
+      "status": "active",
+      "aliases": [
+        "XTC"
+      ],
+      "company_name": "",
+      "priority": 0,
+      "tags": [],
+      "notes": "",
+      "manual_exclude_reason": ""
+    }
   ]
 }

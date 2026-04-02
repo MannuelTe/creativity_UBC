@@ -8,28 +8,31 @@ This app is designed to be launched from the creativity_UBC folder.
 
 import os
 import sys
+from pathlib import Path
+
 import streamlit as st
-import yfinance as yf
 import pandas as pd
 import anthropic
 import json
 import re
-import requests
 import logging
 import warnings
-import time
 import random
 from datetime import datetime
-from urllib.error import HTTPError
-from requests.exceptions import RequestException, Timeout, ConnectionError
 
 # Add microcap directory to Python path for reliable imports
 # This allows the app to be launched from creativity_UBC folder
-microcap_dir = os.path.join(os.getcwd(), 'microcap')
+microcap_dir = os.path.dirname(os.path.abspath(__file__))
 if microcap_dir not in sys.path:
     sys.path.insert(0, microcap_dir)
 
-from ticker_utils import TickerManager, get_fallback_tickers
+from market_data import (
+    fetch_market_data_for_record,
+    format_failure_reason,
+    load_provider_settings,
+    provider_label,
+)
+from ticker_utils import TickerManager, TickerRecord, get_fallback_tickers, infer_ticker_record
 
 # ── Page config ──────────────────────────────────────────────────────────────
 st.set_page_config(page_title="Creativity Project", layout="wide")
@@ -44,9 +47,9 @@ st.title("🔬 Microcap Stock Screener & AI Analyst")
 warnings.filterwarnings("ignore")
 logging.getLogger("yfinance").setLevel(logging.ERROR)
 logging.getLogger("urllib3").setLevel(logging.ERROR)
-# ── Alpha Vantage API configuration ─────────────────────────────────────────────────────────────
-# Get Alpha Vantage API key from secrets
-ALPHA_VANTAGE_API_KEY = st.secrets.get("ALPHA_VANTAGE_API_KEY", os.environ.get("ALPHA_VANTAGE_API_KEY", ""))
+# ── Provider credential configuration ───────────────────────────────────────
+if "ALPHA_VANTAGE_API_KEY" in st.secrets:
+    os.environ["ALPHA_VANTAGE_API_KEY"] = st.secrets["ALPHA_VANTAGE_API_KEY"]
 # ── API Key handling ─────────────────────────────────────────────────────────
 # Priority: 1) st.secrets  2) env var  3) sidebar input  4) session state
 _api_key = ""
@@ -137,11 +140,13 @@ try:
     ticker_manager = TickerManager()
     exchange_info = ticker_manager.get_exchange_info()
     has_validated = ticker_manager.has_validated_tickers()
+    provider_settings = load_provider_settings(ticker_manager.config)
 except Exception as e:
     st.error(f"Error loading ticker management system: {e}")
     ticker_manager = None
     exchange_info = {}
     has_validated = False
+    provider_settings = load_provider_settings()
 
 # ── Show ticker source options with counts ──────────────────────────────────
 if exchange_info:
@@ -166,60 +171,61 @@ if has_validated:
             st.sidebar.success(f"Using {validation_info.get('small_caps_found', 0)} validated small caps")
 
 # ── Ticker selection logic ──────────────────────────────────────────────────
-raw_tickers = []
+raw_records: list[TickerRecord] = []
+validation_snapshot = ticker_manager.get_validation_snapshot(use_small_caps_only=False) if ticker_manager else {}
+exchange_mapping = {
+    "Yahoo Finance (US)": "US",
+    "TSX (Canada)": "TSX",
+    "TSXV (Canada Venture)": "TSXV",
+}
+selected_exchanges = [exchange_mapping[source] for source in data_sources if source in exchange_mapping]
+custom_symbols: list[str] = []
 
 if use_validated and ticker_manager:
-    # Use pre-validated small caps
-    raw_tickers = ticker_manager.get_validated_tickers(use_small_caps_only=True)
-    st.info(f"📋 Using {len(raw_tickers)} pre-validated small cap tickers")
-    
+    raw_records = ticker_manager.get_validated_records(use_small_caps_only=True)
+    st.info(f"📋 Using {len(raw_records)} pre-validated small cap tickers")
 elif ticker_manager:
-    # Use selected exchange sources
-    exchange_mapping = {
-        "Yahoo Finance (US)": "US",
-        "TSX (Canada)": "TSX", 
-        "TSXV (Canada Venture)": "TSXV"
-    }
-    
-    selected_exchanges = [exchange_mapping[source] for source in data_sources 
-                         if source in exchange_mapping]
-    
     for exchange in selected_exchanges:
-        tickers = ticker_manager.get_exchange_tickers(exchange)
-        raw_tickers.extend(tickers)
-        
-    # Add custom tickers if selected
+        raw_records.extend(ticker_manager.get_exchange_records(exchange))
+
     if "Custom tickers" in data_sources:
         custom_input = st.sidebar.text_area(
             "Enter tickers (comma-separated)",
             placeholder="e.g. AAPL, MSFT, GEVO, SU.TO, AMK.V",
         )
-        raw_tickers.extend([t.strip().upper() for t in custom_input.split(",") if t.strip()])
-    
-    # Deduplicate while preserving order
-    raw_tickers = list(dict.fromkeys(raw_tickers))
-    
-    if raw_tickers:
-        st.info(f"📋 Loaded {len(raw_tickers)} tickers from selected sources. Amalgamating")
+        custom_symbols = [ticker.strip().upper() for ticker in custom_input.split(",") if ticker.strip()]
+        raw_records.extend(ticker_manager.build_custom_records(custom_symbols))
+
+    raw_records = ticker_manager.merge_records(raw_records, prefer="last")
+
+    if raw_records:
+        st.info(f"📋 Loaded {len(raw_records)} normalized tickers from selected sources.")
     else:
         st.warning("No tickers found from selected sources")
-        
 else:
-    # Fallback to basic ticker lists if JSON system fails
     st.warning("⚠️ Using fallback ticker lists - run ticker validation to improve")
     if "Yahoo Finance (US)" in data_sources:
-        raw_tickers.extend(get_fallback_tickers("US"))
+        raw_records.extend(infer_ticker_record(symbol, exchange="US") for symbol in get_fallback_tickers("US"))
     if "TSX (Canada)" in data_sources:
-        raw_tickers.extend(get_fallback_tickers("TSX"))
+        raw_records.extend(infer_ticker_record(symbol, exchange="TSX") for symbol in get_fallback_tickers("TSX"))
     if "TSXV (Canada Venture)" in data_sources:
-        raw_tickers.extend(get_fallback_tickers("TSXV"))
-    
-    raw_tickers = list(dict.fromkeys(raw_tickers))
+        raw_records.extend(infer_ticker_record(symbol, exchange="TSXV") for symbol in get_fallback_tickers("TSXV"))
+    raw_records = list({record.canonical_symbol: record for record in raw_records}.values())
 
 # ── Enhanced Smart Ticker Sampling & Vetting ─────────────────────────────────
-if not raw_tickers:
+if not raw_records:
     st.error("No tickers available. Please select data sources or check ticker configuration.")
     st.stop()
+
+ranked_records = (
+    ticker_manager.rank_records(
+        raw_records,
+        validation_state=validation_snapshot,
+        max_market_cap_m=max_cap_m,
+    )
+    if ticker_manager
+    else sorted(raw_records, key=lambda record: record.display_symbol)
+)
 
 # Mode selection - Auto Mode is now default as requested
 selection_mode = st.sidebar.radio(
@@ -247,32 +253,24 @@ else:
         help="Higher numbers take longer but give better coverage"
     )
 
-# Enhanced ticker selection with different modes
-if len(raw_tickers) > max_tickers:
-    if use_validated:
-        # For validated lists, take top ones (they're already quality-filtered)
-        selected_tickers = raw_tickers[:max_tickers]
-        st.info(f"🎯 Processing top {len(selected_tickers)} validated small caps")
+if len(ranked_records) > max_tickers:
+    if selection_mode == "Random Mode":
+        selected_records = random.sample(ranked_records, max_tickers)
+        st.info(f"🎲 Random mode: Selected {len(selected_records)} random tickers")
     else:
-        # Different sampling strategies based on mode
-        import random
-        
-        if selection_mode == "Random Mode":
-            # Random mode: Pure random selection, no special logic
-            random.seed()  # Use current time for true randomness
-            selected_tickers = random.sample(raw_tickers, max_tickers)
-            st.info(f"🎲 Random mode: Selected {len(selected_tickers)} completely random tickers")
+        selected_records = ranked_records[:max_tickers]
+        if use_validated:
+            st.info(f"🎯 Auto mode: Selected the top {len(selected_records)} validated small caps")
         else:
-            # Auto mode: Smart sampling with reproducible seed for consistency
-            random.seed(42)  # For reproducible results during session
-            selected_tickers = random.sample(raw_tickers, max_tickers)
-            st.info(f"🎯 Auto mode: Selected {len(selected_tickers)} tickers for smart vetting")
+            st.info(f"🎯 Auto mode: Selected the top {len(selected_records)} deterministically ranked tickers")
 else:
-    selected_tickers = raw_tickers
+    selected_records = ranked_records
     if selection_mode in ["Auto Mode", "Random Mode"]:
-        st.info(f"📊 Processing all {len(raw_tickers)} available tickers (less than 10 found)")
+        st.info(f"📊 Processing all {len(ranked_records)} available tickers (less than 10 found)")
     else:
-        st.info(f"📊 Processing all {len(raw_tickers)} available tickers")
+        st.info(f"📊 Processing all {len(ranked_records)} available tickers")
+
+selected_tickers = [record.display_symbol for record in selected_records]
 
 # ── Helpers ──────────────────────────────────────────────────────────────────
 
@@ -298,195 +296,17 @@ def get_proxy_pe(sector: str) -> tuple[float, bool]:
     return pe, True
 
 
-def fetch_alpha_vantage_data(ticker: str, retry_count: int = 2) -> dict:
-    """Enhanced Alpha Vantage data fetching with robust error handling and strict rate limiting."""
-    symbol = ticker.replace('.V', '').replace('.TO', '')
-    
-    for attempt in range(retry_count):
-        try:
-            # Alpha Vantage overview endpoint with enhanced error handling
-            url = f"https://www.alphavantage.co/query?function=OVERVIEW&symbol={symbol}&apikey={ALPHA_VANTAGE_API_KEY}"
-            response = requests.get(url, timeout=20)  # Increased timeout
-            
-            if response.status_code == 429:  # Rate limit exceeded
-                if attempt < retry_count - 1:
-                    time.sleep(60)  # Wait full minute before retry on rate limit
-                    continue
-                return {}
-            
-            response.raise_for_status()
-            data = response.json()
-            
-            # Enhanced validation with better rate limit detection
-            if not data or 'Symbol' not in data or data.get('Symbol') == 'None':
-                if 'Note' in data and 'API call frequency' in data.get('Note', ''):
-                    # Rate limit detected in response
-                    if attempt < retry_count - 1:
-                        time.sleep(60)  # Wait full minute on rate limit message
-                        continue
-                elif 'Information' in data and 'API call frequency' in data.get('Information', ''):
-                    # Another rate limit message format
-                    if attempt < retry_count - 1:
-                        time.sleep(60)
-                        continue
-                return {}
-            
-            # Validate market cap early
-            market_cap = 0
-            market_cap_str = data.get('MarketCapitalization', '0')
-            if market_cap_str and market_cap_str not in ['None', '0', 'N/A']:
-                try:
-                    market_cap = float(market_cap_str)
-                except (ValueError, TypeError):
-                    market_cap = 0
-            
-            if market_cap <= 0:
-                return {}  # Skip if no valid market cap
-            
-            # Get current price with fallback methods (skip separate quote call to reduce API usage)
-            current_price = 0
-            try:
-                # Use 52-week high from overview data to avoid extra API call
-                high_str = data.get('52WeekHigh', '0')
-                if high_str and high_str not in ['None', '0', 'N/A']:
-                    current_price = float(high_str)
-                else:
-                    # Only make quote call if absolutely necessary
-                    time.sleep(1)  # Small delay between API calls
-                    quote_url = f"https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol={symbol}&apikey={ALPHA_VANTAGE_API_KEY}"
-                    quote_response = requests.get(quote_url, timeout=15)
-                    if quote_response.status_code == 200:
-                        quote_data = quote_response.json()
-                        if 'Global Quote' in quote_data and '05. price' in quote_data['Global Quote']:
-                            price_str = quote_data['Global Quote']['05. price']
-                            current_price = float(price_str) if price_str not in ['None', '0'] else 0
-            except Exception:
-                current_price = 0
-            
-            # Enhanced P/E extraction
-            pe_ratio = None
-            pe_str = data.get('PERatio', 'None')
-            if pe_str and pe_str not in ['None', '-', 'N/A']:
-                try:
-                    pe_ratio = float(pe_str)
-                    if pe_ratio <= 0 or pe_ratio > 1000:  # Sanity check
-                        pe_ratio = None
-                except (ValueError, TypeError):
-                    pe_ratio = None
-            
-            # Enhanced revenue extraction
-            revenue = 0
-            revenue_str = data.get('RevenueTTM', '0')
-            if revenue_str and revenue_str != 'None':
-                try:
-                    revenue = float(revenue_str)
-                except (ValueError, TypeError):
-                    revenue = 0
-            
-            return {
-                'symbol': ticker,
-                'name': data.get('Name', ticker),
-                'sector': data.get('Sector', 'N/A'),
-                'industry': data.get('Industry', 'N/A'),
-                'market_cap': market_cap,
-                'current_price': current_price,
-                'pe_ratio': pe_ratio,
-                'revenue': revenue,
-                'data_source': 'alpha_vantage',
-                'validation_score': _calculate_data_quality_score({
-                    'market_cap': market_cap, 'price': current_price, 
-                    'pe_ratio': pe_ratio, 'revenue': revenue
-                })
-            }
-            
-        except requests.RequestException as e:
-            if attempt < retry_count - 1:
-                time.sleep(5 * (attempt + 1))  # Progressive backoff
-                continue
-        except Exception as e:
-            if attempt < retry_count - 1:
-                time.sleep(2)
-                continue
-    
-    return {}
-
-def _calculate_data_quality_score(data: dict) -> int:
-    """Calculate a data quality score (0-100) based on available fields."""
-    score = 0
-    if data.get('market_cap', 0) > 0: score += 40
-    if data.get('price', 0) > 0: score += 30
-    if data.get('pe_ratio'): score += 20
-    if data.get('revenue', 0) > 0: score += 10
-    return score
+def _format_data_source_label(provider_used: str, fallback_used: bool) -> str:
+    label = provider_label(provider_used)
+    return f"{label} (fallback)" if fallback_used else label
 
 
-def fetch_yahoo_data_robust(ticker: str, retry_count: int = 2) -> dict:
-    """Enhanced Yahoo Finance data fetching with robust validation."""
-    for attempt in range(retry_count):
-        try:
-            ticker_obj = yf.Ticker(ticker)
-            info = ticker_obj.info
-            
-            # Enhanced validation
-            if not info or not isinstance(info, dict) or len(info) < 5:
-                if attempt < retry_count - 1:
-                    time.sleep(1)
-                    continue
-                return {}
-            
-            # Validate market cap early
-            market_cap = info.get("marketCap")
-            if not market_cap or market_cap <= 0:
-                return {}
-            
-            # Enhanced price extraction
-            price = info.get("currentPrice") or info.get("regularMarketPrice") or info.get("previousClose") or 0
-            if price <= 0:
-                # Try historical data as fallback
-                try:
-                    hist = ticker_obj.history(period="1d")
-                    if not hist.empty:
-                        price = hist['Close'].iloc[-1]
-                except:
-                    price = 0
-            
-            # Enhanced sector/industry validation
-            sector = info.get("sector", "N/A")
-            industry = info.get("industry", "N/A")
-            if sector == "N/A" and industry == "N/A":
-                # Lower quality score for missing sector info
-                pass
-            
-            return {
-                'symbol': ticker,
-                'name': info.get("shortName", info.get("longName", ticker)),
-                'sector': sector,
-                'industry': industry,
-                'market_cap': market_cap,
-                'current_price': price,
-                'pe_ratio': info.get("trailingPE"),
-                'revenue': info.get("totalRevenue", 0),
-                'data_source': 'yahoo_finance',
-                'validation_score': _calculate_data_quality_score({
-                    'market_cap': market_cap, 'price': price,
-                    'pe_ratio': info.get("trailingPE"), 'revenue': info.get("totalRevenue", 0)
-                })
-            }
-            
-        except Exception as e:
-            if attempt < retry_count - 1:
-                time.sleep(1)
-                continue
-    
-    return {}
-
-def fetch_market_caps_live(tickers: list[str]) -> pd.DataFrame:
-    """Enhanced market cap fetching with robust vetting and automatic filtering.
+def fetch_market_caps_live(ticker_records: list[TickerRecord]) -> pd.DataFrame:
+    """Fetch market cap data for normalized ticker records.
     Updates display live and filters results by market cap threshold.
     """
     rows = []
     failed_tickers = []
-    av_count = 0  # Track Alpha Vantage API calls
     quality_scores = []
     
     # Create placeholders for live updates
@@ -495,53 +315,43 @@ def fetch_market_caps_live(tickers: list[str]) -> pd.DataFrame:
     df_placeholder = st.empty()
     vetting_info = st.empty()
     
-    total_tickers = len(tickers)
+    total_tickers = len(ticker_records)
     
     # Show vetting process info
     vetting_info.info(f"🔍 **Vetting Process Started**: Validating {total_tickers} tickers with market cap filter ≤ ${max_cap_m}M")
     
-    for i, t in enumerate(tickers):
+    for i, record in enumerate(ticker_records):
+        ticker_symbol = record.display_symbol
         # Update progress
         progress = (i + 1) / total_tickers
         progress_bar.progress(progress)
-        status_text.text(f"🔍 Vetting {t} ({i+1}/{total_tickers})...")
+        status_text.text(f"🔍 Vetting {ticker_symbol} ({i+1}/{total_tickers})...")
         
         try:
-            ticker_data = None
-            api_used = None
-            
-            # Enhanced ticker routing with better fallback logic
-            if t.endswith('.V') or t.endswith('.TO'):  # Canadian stocks
-                av_count += 1
-                # Enhanced rate limiting for Alpha Vantage (5 calls per minute)
-                if av_count > 1 and av_count % 5 == 1:
-                    status_text.text(f"⏱️ Rate limiting Alpha Vantage: waiting 12s... ({i+1}/{total_tickers})")
-                    time.sleep(12)
-                elif av_count > 1:  # Add small delay between all calls
-                    time.sleep(0.5)
-                
-                ticker_data = fetch_alpha_vantage_data(t)
-                api_used = "Alpha Vantage"
-                
-                # Fallback to Yahoo if Alpha Vantage fails
-                if not ticker_data:
-                    status_text.text(f"🔄 Fallback: trying Yahoo Finance for {t}... ({i+1}/{total_tickers})")
-                    ticker_data = fetch_yahoo_data_robust(t)
-                    api_used = "Yahoo Finance (fallback)"
-                    
-            else:  # US/TSX stocks - use Yahoo Finance primarily
-                ticker_data = fetch_yahoo_data_robust(t)
-                api_used = "Yahoo Finance"
-            
-            # Skip if no data or failed validation
-            if not ticker_data:
-                failed_tickers.append((t, f"No valid data from {api_used}"))
+            result = fetch_market_data_for_record(
+                record=record,
+                settings=provider_settings,
+                search_dir=Path(microcap_dir),
+            )
+
+            if not result.get("ok"):
+                failed_tickers.append(
+                    (
+                        ticker_symbol,
+                        format_failure_reason(result["failure"], result.get("failures")),
+                    )
+                )
                 continue
-            
-            # Market cap filtering (convert to millions for comparison)
-            market_cap_m = ticker_data.get('market_cap', 0) / 1e6
+
+            ticker_data = result["data"]
+            api_used = _format_data_source_label(
+                provider_used=ticker_data.get("provider_used", record.preferred_api),
+                fallback_used=bool(ticker_data.get("fallback_used")),
+            )
+
+            market_cap_m = ticker_data.get("market_cap", 0) / 1e6
             if market_cap_m > max_cap_m:
-                failed_tickers.append((t, f"Market cap ${market_cap_m:.1f}M exceeds ${max_cap_m}M threshold"))
+                failed_tickers.append((ticker_symbol, f"Market cap ${market_cap_m:.1f}M exceeds ${max_cap_m}M threshold"))
                 continue
             
             # Extract and validate data
@@ -557,12 +367,12 @@ def fetch_market_caps_live(tickers: list[str]) -> pd.DataFrame:
                 pe_display = proxy_pe
                 pe_is_proxy = True
             
-            quality_score = ticker_data.get('validation_score', 0)
+            quality_score = ticker_data.get('quality_score', 0)
             quality_scores.append(quality_score)
             
             new_row = {
-                "Ticker": t,
-                "Company": ticker_data.get('name', t),
+                "Ticker": ticker_symbol,
+                "Company": ticker_data.get('name', ticker_symbol),
                 "Sector": sector,
                 "Industry": ticker_data.get('industry', 'N/A'),
                 "Market Cap ($M)": round(market_cap_m, 1),
@@ -584,7 +394,7 @@ def fetch_market_caps_live(tickers: list[str]) -> pd.DataFrame:
                 )
                 
         except Exception as e:
-            failed_tickers.append((t, f"Unexpected error: {str(e)[:50]}..."))
+            failed_tickers.append((ticker_symbol, f"Unexpected error: {str(e)[:50]}..."))
             continue
     
     # Clear progress indicators
@@ -618,10 +428,6 @@ def fetch_market_caps_live(tickers: list[str]) -> pd.DataFrame:
         if len(rows) > 1:
             market_caps = [row['Market Cap ($M)'] for row in rows]
             st.info(f"💰 **Market Cap Range**: ${min(market_caps):.1f}M - ${max(market_caps):.1f}M (median: ${sorted(market_caps)[len(market_caps)//2]:.1f}M)")
-        
-        # Show AlphaVantage usage summary
-        if av_count > 0:
-            st.info(f"🔌 **API Usage**: {av_count} AlphaVantage calls made (rate limited to 5/minute)")
     
     else:
         st.error(f"❌ No valid tickers found from {total_processed} processed. All tickers filtered out.")
@@ -651,7 +457,7 @@ if "df_filtered" not in st.session_state or "last_screening_params" not in st.se
     # Need to run screening
     with st.expander("🔍 Live Screening Progress", expanded=True):
         st.write(f"**Fetching market data from {source_label}...**")
-        df_all = fetch_market_caps_live(selected_tickers)
+        df_all = fetch_market_caps_live(selected_records)
     
     if df_all.empty:
         st.warning("No data returned. Check your tickers or internet connection.")
